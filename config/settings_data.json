@@ -621,13 +621,13 @@
               "bg_button": "#e8c547",
               "color_button": "#222222",
               "bg_button_hover": "#e8c547",
-              "color_button_hover": "#ffffff",
+              "color_button_hover": "#222222",
               "button_label_2": "Shop All",
               "button_link_2": "shopify://collections/all",
               "stylebtns_2": "btn-theme",
               "bg_button_2": "#000000",
               "color_button_2": "#ffffff",
-              "bg_button_hover_2": "#ff6f2e",
+              "bg_button_hover_2": "#222222",
               "color_button_hover_2": "#ffffff"
             }
           }
