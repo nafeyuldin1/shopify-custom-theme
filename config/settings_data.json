@@ -1681,6 +1681,14 @@
       "announcement-bar-slide": {
         "type": "announcement-bar-slide",
         "blocks": {
+          "afb084a9-2a31-4207-9d23-694c0f6b1281": {
+            "type": "Item",
+            "settings": {
+              "code": "✨ Get 50%+ OFF on all products — Limited Time Only! ⏰",
+              "button_text": "Shop Now",
+              "button_link": "shopify://collections/all"
+            }
+          },
           "a00daf6f-fb1c-4351-80dc-24e405bf630e": {
             "type": "Item",
             "settings": {
@@ -1688,20 +1696,11 @@
               "button_text": "Shop now",
               "button_link": "shopify://collections"
             }
-          },
-          "afb084a9-2a31-4207-9d23-694c0f6b1281": {
-            "type": "Item",
-            "disabled": true,
-            "settings": {
-              "code": "Celebrate mum with amazing gifts under $25.",
-              "button_text": "Shop Now",
-              "button_link": "shopify://collections/best-seller"
-            }
           }
         },
         "block_order": [
-          "a00daf6f-fb1c-4351-80dc-24e405bf630e",
-          "afb084a9-2a31-4207-9d23-694c0f6b1281"
+          "afb084a9-2a31-4207-9d23-694c0f6b1281",
+          "a00daf6f-fb1c-4351-80dc-24e405bf630e"
         ],
         "settings": {
           "enable": true,
