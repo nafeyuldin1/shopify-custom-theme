@@ -33,6 +33,9 @@
         "0b74bde9-fb76-4d98-aaae-fc807e6f171f",
         "13aba3f0-7305-4cc6-959e-23f07d16c852"
       ],
+      "custom_css": [
+        ".collection-card-1-infor{display: none;}"
+      ],
       "settings": {
         "animation": "",
         "setwidth": "container",
