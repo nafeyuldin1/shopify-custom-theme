@@ -88,6 +88,50 @@
         "marginmobile": "0px 0px 0px 0px"
       }
     },
+    "parallax_banner_3zmRTM": {
+      "type": "parallax-banner",
+      "blocks": {
+        "heading_KWFJqn": {
+          "type": "heading",
+          "settings": {
+            "title": "Adventure Starts with Every Step",
+            "size_text": "h2"
+          }
+        },
+        "button_zVtmV4": {
+          "type": "button",
+          "settings": {
+            "button": "Shop Now",
+            "link": "shopify://collections/all",
+            "style_btn": "btn-underline btn-underline-white"
+          }
+        }
+      },
+      "block_order": [
+        "heading_KWFJqn",
+        "button_zVtmV4"
+      ],
+      "name": "Parallax banner",
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "bgsection": "rgba(0,0,0,0)",
+        "parrallax_enable": true,
+        "image": "shopify://shop_images/123.png",
+        "height_section": "550",
+        "height_section_mobile": "450",
+        "align": "center",
+        "position_text": "bot-center",
+        "bg_box": "rgba(0,0,0,0)",
+        "opacity_bgbox": 1,
+        "title_color": "#ffffff",
+        "bg_overlay": "#000",
+        "gradient_bg": "",
+        "opacity_bg_overlay": 0.1,
+        "paddingsection": "0px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px"
+      }
+    },
     "8ad91147-85c7-45fe-ae8c-253326189dde": {
       "type": "image-content-5",
       "blocks": {
@@ -415,6 +459,7 @@
   },
   "order": [
     "430d67f1-2a0b-4500-81eb-2bd7276f92ad",
+    "parallax_banner_3zmRTM",
     "07954675-bad5-4a16-8ffa-2392279b713d",
     "8ad91147-85c7-45fe-ae8c-253326189dde",
     "e4af4578-6f64-422d-83cb-8b60a7e1756b",
