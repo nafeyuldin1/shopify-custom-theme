@@ -12026,6 +12026,7 @@ blockquote::before {
     color: black !important;
   }
 }
-.container .section-block .section-header.text-center{
+.container .section-block .section-header.text-center,
+.section-header.text-center{
  margin-bottom: 30px;
 }
