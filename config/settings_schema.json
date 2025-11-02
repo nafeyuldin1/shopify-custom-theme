@@ -2177,10 +2177,10 @@
         "type": "range",
         "id": "free_shipping_value",
         "min": 0,
-        "max": 1000,
-        "step": 10,
+        "max": 9000,
+        "step": 1000,
         "label": "Minimum order value to be free shipping",
-        "default": 100
+        "default": 1000
       },
       {
         "type": "text",
