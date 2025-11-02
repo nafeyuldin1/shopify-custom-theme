@@ -1684,7 +1684,7 @@
           "a00daf6f-fb1c-4351-80dc-24e405bf630e": {
             "type": "Item",
             "settings": {
-              "code": "<b> 🚚 Free shipping over 10,000rs </b>",
+              "code": "<b> 🚚 Free shipping over 9,000rs </b>",
               "button_text": "Shop now",
               "button_link": "shopify://collections"
             }
