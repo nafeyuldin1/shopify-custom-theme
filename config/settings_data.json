@@ -637,7 +637,7 @@
         ],
         "custom_css": [
           "@media screen and (max-width: 750px) {.slideshow__text-wrap--desktop .slideshow__text-content {top: 35%; }}",
-          ".slideshow__btn-wrapper div:nth-child(2) a:hover {background: black !important; color: black;}"
+          ".slideshow__btn-wrapper .btn2:hover {background: black !important; color: white;}"
         ],
         "settings": {
           "enable_slideshow": true,
