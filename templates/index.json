@@ -15,68 +15,35 @@
         "0b74bde9-fb76-4d98-aaae-fc807e6f171f": {
           "type": "collection",
           "settings": {
-            "collection": "frontpage",
+            "collection": "mens-shoes",
             "icon": ""
           }
         },
         "13aba3f0-7305-4cc6-959e-23f07d16c852": {
           "type": "collection",
           "settings": {
-            "collection": "women",
-            "icon": ""
-          }
-        },
-        "template--19803510538560__430d67f1-2a0b-4500-81eb-2bd7276f92ad-1688610004822568a8-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "jewellery",
-            "icon": ""
-          }
-        },
-        "template--19803510538560__430d67f1-2a0b-4500-81eb-2bd7276f92ad-1688610004822568a8-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "outerwear",
-            "icon": ""
-          }
-        },
-        "da799991-c205-4b0b-b14c-7454b5dd99cd": {
-          "type": "collection",
-          "settings": {
-            "collection": "shoes",
-            "icon": ""
-          }
-        },
-        "template--19803510538560__430d67f1-2a0b-4500-81eb-2bd7276f92ad-1688610004822568a8-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "glasses",
+            "collection": "women-shoes",
             "icon": ""
           }
         }
       },
       "block_order": [
         "0b74bde9-fb76-4d98-aaae-fc807e6f171f",
-        "13aba3f0-7305-4cc6-959e-23f07d16c852",
-        "template--19803510538560__430d67f1-2a0b-4500-81eb-2bd7276f92ad-1688610004822568a8-2",
-        "template--19803510538560__430d67f1-2a0b-4500-81eb-2bd7276f92ad-1688610004822568a8-0",
-        "da799991-c205-4b0b-b14c-7454b5dd99cd",
-        "template--19803510538560__430d67f1-2a0b-4500-81eb-2bd7276f92ad-1688610004822568a8-1"
+        "13aba3f0-7305-4cc6-959e-23f07d16c852"
       ],
-      "disabled": true,
       "settings": {
         "animation": "",
         "setwidth": "container",
         "bgsection": "#ffffff",
-        "title_top": "Our Exclusive Collections",
-        "title": "Shop By Categories",
+        "title_top": "",
+        "title": "",
         "des": "",
         "align-heading": "center",
         "size_image": "square",
         "style_item": "top",
         "rows": "1",
-        "show": 5,
-        "radius": 50,
+        "show": 2,
+        "radius": 0,
         "space": 15,
         "size_text": "h4",
         "show_count": false,
