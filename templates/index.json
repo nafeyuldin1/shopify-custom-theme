@@ -53,7 +53,7 @@
         "size_text": "h4",
         "show_count": false,
         "button_text": "",
-        "enable_carousel": true,
+        "enable_carousel": false,
         "arrows": false,
         "draggable": true,
         "dots": false,
