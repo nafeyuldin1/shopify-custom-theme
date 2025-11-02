@@ -172,6 +172,7 @@
     },
     "product-requently": {
       "type": "product-bundle",
+      "disabled": true,
       "settings": {
         "animation": "fade-up",
         "bgsection": "#ffffff",
@@ -226,6 +227,7 @@
         "147e9960-c5fe-44f4-8469-9583a9752a0a",
         "86f16245-d6c0-4cfd-a4c8-f96a893dc128"
       ],
+      "disabled": true,
       "settings": {
         "paddingsection": "48px 0px 40px 0px",
         "paddingmobile": "32px 0px 32px 0px",
