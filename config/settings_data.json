@@ -2204,19 +2204,21 @@
           "0f4d122e-cf9d-4fbf-8082-85a6cb05155f": {
             "type": "menu-banner",
             "settings": {
-              "menu_title": "",
+              "menu_title": "Shop All",
               "menu_width": "container",
               "menu_column": 2,
               "enable_menu_banner": true,
               "menu_banner_width": 60,
               "menu_banner_height": 300,
               "menu_banner_size_title": "h4",
+              "menu_banner_image_1": "shopify://shop_images/Group_21.png",
               "menu_banner_position_text_1": "bot-left",
               "menu_banner_subheading_1": "All Styles",
               "menu_banner_heading_1": "Min. 65% Off",
               "menu_banner_paragraph_1": "",
               "menu_banner_btn_1": "Discover now",
               "menu_banner_link_1": "shopify://collections",
+              "menu_banner_image_2": "shopify://shop_images/Group_20.png",
               "menu_banner_position_text_2": "bot-left",
               "menu_banner_subheading_2": "Lingerie",
               "menu_banner_heading_2": "Flat 50% Off",
@@ -2234,7 +2236,7 @@
           "96e8331c-f8e4-4b9d-802b-4a659893f052": {
             "type": "menu-banner-classic",
             "settings": {
-              "menu_title": "Shop All",
+              "menu_title": "",
               "menu_width": "container",
               "menu_column": 3,
               "enable_menu_banner": true,
