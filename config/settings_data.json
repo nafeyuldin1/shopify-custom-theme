@@ -601,6 +601,7 @@
             "type": "image",
             "settings": {
               "image": "shopify://shop_images/Frame_46.png",
+              "image_mobile": "shopify://shop_images/frame.png",
               "alignment": "center center",
               "text_alignment": "left center",
               "bgwrap": "#f8ede7",
@@ -638,7 +639,7 @@
           "enable_slideshow": true,
           "setwidthout": "full",
           "slideshow_height_adapt": "adapt",
-          "slideshow_height_mobile": "500",
+          "slideshow_height_mobile": "full",
           "setwidth": "container",
           "style_section": "style_1",
           "slideshow_mobile": true,
