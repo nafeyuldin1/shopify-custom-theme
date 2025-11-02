@@ -12023,6 +12023,6 @@ blockquote::before {
     display: none !important;
   }
   .js-wishlist-count.js-wishlist-indicator{
-    color: black;
+    color: black !important;
   }
 }
