@@ -12013,5 +12013,5 @@ blockquote::before {
     border-bottom-color: var(--g-main-2);
 }
 .slideshow__btn-wrapper{
-  column-gap: 10px;
+  column-gap: 10px !important;
 }
