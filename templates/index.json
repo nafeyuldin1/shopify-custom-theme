@@ -34,7 +34,7 @@
         "13aba3f0-7305-4cc6-959e-23f07d16c852"
       ],
       "custom_css": [
-        ".collection-card-1-infor{display: none;}"
+        ".collection-card-1-infor {display: none;}"
       ],
       "settings": {
         "animation": "",
@@ -61,7 +61,7 @@
         "paddingsection": "80px 0px 60px 0px",
         "paddingmobile": "0px 0px 0px 0px",
         "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
+        "marginmobile": "20px 0px 0px 0px"
       }
     },
     "8ad91147-85c7-45fe-ae8c-253326189dde": {
