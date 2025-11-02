@@ -59,7 +59,7 @@
         "draggable": true,
         "dots": false,
         "infinite": true,
-        "paddingsection": "40px 0px 60px 0px",
+        "paddingsection": "40px 0px 0px 0px",
         "paddingmobile": "0px 0px 0px 0px",
         "marginsection": "0px 0px 0px 0px",
         "marginmobile": "20px 0px 0px 0px"
