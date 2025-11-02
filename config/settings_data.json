@@ -2305,7 +2305,7 @@
           "menudroptext": "#6c747b",
           "menudropbg": "#ffffff",
           "menudropborder": "#f1f1f1",
-          "main_linklist": "main-menu",
+          "main_linklist": "quick-links",
           "font_family_menu": "--g-font-2",
           "font_sizemenu": "12px",
           "font_weight": "600",
