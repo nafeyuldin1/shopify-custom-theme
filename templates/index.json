@@ -65,29 +65,6 @@
         "marginmobile": "20px 0px 0px 0px"
       }
     },
-    "07954675-bad5-4a16-8ffa-2392279b713d": {
-      "type": "featured-products",
-      "settings": {
-        "animation": "",
-        "setwidth": "container",
-        "bgsection": "#ffffff",
-        "title_top": "Top Picks for Fashion-Forward Shoppers",
-        "title": "Best Selling",
-        "des": "",
-        "align-heading": "center",
-        "collection": "frontpage",
-        "enable_creative": false,
-        "padding": true,
-        "colgrid": "col-lg-3",
-        "rows": 8,
-        "txtbutton": "show all",
-        "urlbtn": "",
-        "paddingsection": "0px 0px 20px 0px",
-        "paddingmobile": "20px 0px 0px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
-      }
-    },
     "parallax_banner_3zmRTM": {
       "type": "parallax-banner",
       "blocks": {
@@ -125,11 +102,34 @@
         "bg_box": "rgba(0,0,0,0)",
         "opacity_bgbox": 1,
         "title_color": "#ffffff",
-        "bg_overlay": "#000",
+        "bg_overlay": "#000000",
         "gradient_bg": "",
         "opacity_bg_overlay": 0.1,
-        "paddingsection": "0px 0px 0px 0px",
-        "marginsection": "0px 0px 0px 0px"
+        "paddingsection": "0px 0px 40px 0px",
+        "marginsection": "40px 0px 0px 0px"
+      }
+    },
+    "07954675-bad5-4a16-8ffa-2392279b713d": {
+      "type": "featured-products",
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "title_top": "Top Picks for Fashion-Forward Shoppers",
+        "title": "Best Selling",
+        "des": "",
+        "align-heading": "center",
+        "collection": "frontpage",
+        "enable_creative": false,
+        "padding": true,
+        "colgrid": "col-lg-3",
+        "rows": 8,
+        "txtbutton": "show all",
+        "urlbtn": "",
+        "paddingsection": "0px 0px 20px 0px",
+        "paddingmobile": "20px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
       }
     },
     "8ad91147-85c7-45fe-ae8c-253326189dde": {
