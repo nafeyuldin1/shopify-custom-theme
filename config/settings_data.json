@@ -636,7 +636,8 @@
           "57fbd2ee-62ca-482f-a017-4a435f4fdb87"
         ],
         "custom_css": [
-          "@media screen and (max-width: 750px) {.slideshow__text-wrap--desktop .slideshow__text-content {top: 35%; }}"
+          "@media screen and (max-width: 750px) {.slideshow__text-wrap--desktop .slideshow__text-content {top: 35%; }}",
+          ".slideshow__btn:nth-child(2) a:hover{background: black !important; color: black;}"
         ],
         "settings": {
           "enable_slideshow": true,
