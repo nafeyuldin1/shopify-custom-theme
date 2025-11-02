@@ -1729,7 +1729,7 @@
         ],
         "settings": {
           "enable": true,
-          "animation": "fade",
+          "animation": "fade-up",
           "size_text": "small",
           "announ_type": "carousel",
           "scroll_dot": "dot",
