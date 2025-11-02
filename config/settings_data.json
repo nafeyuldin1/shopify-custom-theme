@@ -111,7 +111,7 @@
     "size_image_grid": "auto",
     "enable_type": true,
     "t_product": false,
-    "second_image": true,
+    "second_image": false,
     "enable_review": true,
     "e_swatch": true,
     "swatch_color": true,
