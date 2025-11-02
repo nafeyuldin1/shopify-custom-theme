@@ -635,6 +635,9 @@
         "block_order": [
           "57fbd2ee-62ca-482f-a017-4a435f4fdb87"
         ],
+        "custom_css": [
+          "@media screen and (max-width: 750px){.slideshow__text-wrap--desktop .slideshow__text-content{top: 35%; }}"
+        ],
         "settings": {
           "enable_slideshow": true,
           "setwidthout": "full",
