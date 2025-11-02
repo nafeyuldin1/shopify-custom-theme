@@ -12019,4 +12019,7 @@ blockquote::before {
   .header-bottom  .container .menudesk-left.pr-2.d-flex{
     display: none !important;
   }
+  .js-cart-count.site-header__cart-indicator{
+    display: none !important;
+  }
 }
