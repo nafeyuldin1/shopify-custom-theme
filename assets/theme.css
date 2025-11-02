@@ -12015,3 +12015,8 @@ blockquote::before {
 .slideshow__btn-wrapper{
   column-gap: 10px !important;
 }
+@media screen and (max-width: 750px){
+  .header-bottom  .container .menudesk-left.pr-2.d-flex{
+    dispaly: none;
+  }
+}
