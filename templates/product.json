@@ -154,7 +154,7 @@
         "image_size": "portrait",
         "enable_video_looping": true,
         "stock_enable": true,
-        "sizeguide_enable": true,
+        "sizeguide_enable": false,
         "sizeguide_title": "Size Guide",
         "sizeguide_page": "sizeguide",
         "crosssell_title": "Cross selling",

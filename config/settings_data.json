@@ -171,7 +171,7 @@
     "coupon_code_title": "List Coupon",
     "coupon_code_content": "<p><strong>december</strong> → 20% off 14 collections</p><p><strong>lotita</strong> → 10% off No usage limits</p><p>Coupon code will work on checkout page</p>",
     "free_shipping_enable": true,
-    "free_shipping_value": 1000,
+    "free_shipping_value": 9000,
     "free_end": "for Free Shipping",
     "free_shipping_text": "Your order is free delivery !",
     "shipping_calculator": true,
