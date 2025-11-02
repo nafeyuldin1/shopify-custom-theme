@@ -16,6 +16,7 @@
           "type": "collection",
           "settings": {
             "collection": "mens-shoes",
+            "image": "shopify://shop_images/Group_21.png",
             "icon": ""
           }
         },
@@ -23,6 +24,7 @@
           "type": "collection",
           "settings": {
             "collection": "women-shoes",
+            "image": "shopify://shop_images/Group_20.png",
             "icon": ""
           }
         }
@@ -39,7 +41,7 @@
         "title": "",
         "des": "",
         "align-heading": "center",
-        "size_image": "square",
+        "size_image": "auto",
         "style_item": "top",
         "rows": "1",
         "show": 2,
