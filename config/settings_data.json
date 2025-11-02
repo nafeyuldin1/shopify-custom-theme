@@ -1684,7 +1684,7 @@
           "afb084a9-2a31-4207-9d23-694c0f6b1281": {
             "type": "Item",
             "settings": {
-              "code": "✨ Get 50%+ OFF on all products — Limited Time Only! ⏰",
+              "code": "<b> ✨ Get 50%+ OFF on all products — Limited Time Only! ⏰</b>",
               "button_text": "Shop Now",
               "button_link": "shopify://collections/all"
             }
@@ -1692,7 +1692,7 @@
           "a00daf6f-fb1c-4351-80dc-24e405bf630e": {
             "type": "Item",
             "settings": {
-              "code": "<b> 🚚 Free shipping over 9,000rs </b>",
+              "code": "<b>✨ Get 50%+ OFF on all products — Limited Time Only! ⏰</b>",
               "button_text": "Shop now",
               "button_link": "shopify://collections"
             }
