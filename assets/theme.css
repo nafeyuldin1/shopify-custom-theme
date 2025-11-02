@@ -12017,6 +12017,6 @@ blockquote::before {
 }
 @media screen and (max-width: 750px){
   .header-bottom  .container .menudesk-left.pr-2.d-flex{
-    dispaly: none !important;
+    display: none !important;
   }
 }
