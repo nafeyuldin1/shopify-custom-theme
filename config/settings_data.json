@@ -2321,9 +2321,9 @@
           "enable_language_selector": false,
           "icon_cart": "icon",
           "svg_cart": "cart-1",
-          "icon_wishlist": "none",
-          "icon_login": "icon-text",
-          "icon_search": "icon"
+          "icon_wishlist": "icon",
+          "icon_login": "icon",
+          "icon_search": "icon-text"
         }
       },
       "cookie-policy": {
