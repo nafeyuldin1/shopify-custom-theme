@@ -1702,6 +1702,9 @@
           "afb084a9-2a31-4207-9d23-694c0f6b1281",
           "a00daf6f-fb1c-4351-80dc-24e405bf630e"
         ],
+        "custom_css": [
+          ".announcement-text-left.small{display: none;}"
+        ],
         "settings": {
           "enable": true,
           "animation": "fade-up",
