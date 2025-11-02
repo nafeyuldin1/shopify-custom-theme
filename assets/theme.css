@@ -11934,18 +11934,18 @@ blockquote::before {
 }
 
 .popup-newsletter--description {
-    padding-bottom: 20px !important;
+    padding-bottom: 20px ;
 }
 
 /* Rosyz */
 
 .slideshow-wrapper .btn-theme:hover {
     background-color: var(--header-linkhover);
-    border-color: var(--header-linkhover) !important;
+    border-color: var(--header-linkhover) ;
 }
 
 .slideshow-wrapper .btn-theme {
-    border-color: #222222 !important;
+    border-color: #222222 ;
 }
 
 .slideshow-wrapper .btn-theme:before {
@@ -11953,7 +11953,7 @@ blockquote::before {
 }
 
 .slideshow__text-wrap--desktop .slideshow__text-content .text-left h2 {
-    padding-left: 0 !important;
+    padding-left: 0 ;
 }
 
 .site-footer a, .section-footer-email h4 {
@@ -11967,7 +11967,7 @@ blockquote::before {
 }
 
 .list-image-content .product-card--style5 .product-card__overlaytop, .list-image-content .product-card--style5 .product-card__overlaybottom {
-    display: none !important;
+    display: none ;
 }
 
 .blog__title-link a { transition: all 300ms linear; font-size: 22px;}
@@ -11978,7 +11978,7 @@ blockquote::before {
 }
 
 .customstyletemplate--16519745470595__acf565ac-3813-4c93-b74e-71863d172e81 .advand-html-image-sub img {
-    max-width: 100% !important;
+    max-width: 100% ;
 }
 
 .customstyletemplate--16519745470595__acf565ac-3813-4c93-b74e-71863d172e81 .advand-html-title {
@@ -12000,15 +12000,15 @@ blockquote::before {
 }
 
 .customstyletemplate--16519745470595__8ad91147-85c7-45fe-ae8c-253326189dde.layout-dynamic .mt-5 {
-    margin-top: 20px !important;
+    margin-top: 20px ;
 }
 
 .customstyletemplate--16519745470595__e4af4578-6f64-422d-83cb-8b60a7e1756b .btn-underline {
-    color: #222 !important;
-    border-color: #222 !important;
+    color: #222 ;
+    border-color: #222 ;
 }
 
 .customstyletemplate--16519745470595__e4af4578-6f64-422d-83cb-8b60a7e1756b .btn-underline:hover {
-    color: var(--g-main-2)!important;
-    border-bottom-color: var(--g-main-2)!important;
+    color: var(--g-main-2);
+    border-bottom-color: var(--g-main-2);
 }
