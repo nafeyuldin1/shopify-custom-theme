@@ -384,6 +384,9 @@
         "faq_y8nryY",
         "faq_KXiJic"
       ],
+      "custom_css": [
+        "h4 span {text-transform: capitalize !important;}"
+      ],
       "name": "Faqs Accordion",
       "settings": {
         "animation": "",
