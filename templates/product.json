@@ -30,12 +30,29 @@
           "type": "separator",
           "settings": {}
         },
+        "2cf20ef7-ba29-4dd5-8c98-df0b96ba3c5b": {
+          "type": "text",
+          "settings": {
+            "text": "🔥  30 sold in last 18 hours",
+            "text_style": "subtitle"
+          }
+        },
+        "9cd2d8a0-a8b4-46d7-b3a7-b1609af99285": {
+          "type": "fakeviewer",
+          "settings": {
+            "fake_view_min": 12,
+            "fake_view_max": 30,
+            "fake_view_duration": 4,
+            "fake_view_text_prefix": "👀",
+            "fake_view_text_suffix": "customers are viewing this product"
+          }
+        },
         "8288910a-1ad6-47df-b127-118bc1d2ce24": {
           "type": "buttons",
           "settings": {
             "enable_local_pickup": true,
             "enable_hurrify": true,
-            "enable_payment_button": true,
+            "enable_payment_button": false,
             "waitlist": true,
             "product_selector": "radio",
             "sw_color_product": true,
@@ -43,24 +60,23 @@
             "size_color": "small-38"
           }
         },
+        "b7034bf2-48fd-492f-a089-3169873730db": {
+          "type": "salepoint",
+          "settings": {
+            "icon": "lock",
+            "free_word": "Secure payment"
+          }
+        },
+        "13c388e5-8dd3-4462-9284-ec3f2c9aabc6": {
+          "type": "salepoint",
+          "settings": {
+            "icon": "shield",
+            "free_word": "2 Year Warranty"
+          }
+        },
         "7120c076-9673-4f15-a579-5efa29fefb6f": {
           "type": "separator",
           "settings": {}
-        },
-        "bf089f50-667c-4417-a84a-9478625741a1": {
-          "type": "list-info",
-          "settings": {
-            "product_vendor_enable": true,
-            "product_type_enable": true,
-            "variant_sku_enable": true,
-            "variant_available_enable": true
-          }
-        },
-        "11f6643a-6bb6-4db9-a512-9c0eefc8c3b8": {
-          "type": "countdown",
-          "settings": {
-            "title_heading": "🔥 Sale ends in !"
-          }
         },
         "1431e891-e819-4fa1-8416-0cb3956f0e39": {
           "type": "description",
@@ -88,44 +104,6 @@
             "page": ""
           }
         },
-        "8d4704f6-d81d-4390-9ec5-af58698bef51": {
-          "type": "salepoint",
-          "settings": {
-            "icon": "leaf",
-            "free_word": "55% Linen, 45% Rayon"
-          }
-        },
-        "b7034bf2-48fd-492f-a089-3169873730db": {
-          "type": "salepoint",
-          "settings": {
-            "icon": "lock",
-            "free_word": "Secure payment"
-          }
-        },
-        "13c388e5-8dd3-4462-9284-ec3f2c9aabc6": {
-          "type": "salepoint",
-          "settings": {
-            "icon": "shield",
-            "free_word": "2 Year Warranty"
-          }
-        },
-        "9cd2d8a0-a8b4-46d7-b3a7-b1609af99285": {
-          "type": "fakeviewer",
-          "settings": {
-            "fake_view_min": 12,
-            "fake_view_max": 30,
-            "fake_view_duration": 3,
-            "fake_view_text_prefix": "👀",
-            "fake_view_text_suffix": "customers are viewing this product"
-          }
-        },
-        "2cf20ef7-ba29-4dd5-8c98-df0b96ba3c5b": {
-          "type": "text",
-          "settings": {
-            "text": "🔥  30 sold in last 18 hours",
-            "text_style": "subtitle"
-          }
-        },
         "1be7473b-00b2-4ad9-a7c0-356b86de67a7": {
           "type": "shipping",
           "settings": {}
@@ -142,35 +120,6 @@
           "type": "share",
           "settings": {}
         },
-        "a405ef88-bdbe-486d-9fb3-6c91aa4e1509": {
-          "type": "tabfix",
-          "disabled": true,
-          "settings": {
-            "enable_tabvertical": false,
-            "gtab_des": "Description",
-            "gtab_review_enable": true,
-            "gtab_review": "Review",
-            "stab_title1": "Tab 1",
-            "stab_content1": "<p>111</p>",
-            "stab_title2": "",
-            "stab_content2": "",
-            "stab_title3": "",
-            "stab_content3": "",
-            "stab_title4": "",
-            "stab_content4": ""
-          }
-        },
-        "51f9d856-95f4-4741-bf4d-afe15438ff29": {
-          "type": "related-product",
-          "disabled": true,
-          "settings": {
-            "title_heading": "Related products",
-            "product_list": [
-              "abrigo-largo-lana",
-              "awesome-aluminum-plate"
-            ]
-          }
-        },
         "883720d7-3346-4495-85a0-add8b3d7a51f": {
           "type": "trust-badge",
           "settings": {
@@ -184,29 +133,24 @@
         "c5c11045-e3b5-47e4-80d1-25e86ec844cc",
         "1affb493-1e14-4893-9876-be8d348ee475",
         "ff32ea77-bcea-43d3-8e38-55894c9d938a",
+        "2cf20ef7-ba29-4dd5-8c98-df0b96ba3c5b",
+        "9cd2d8a0-a8b4-46d7-b3a7-b1609af99285",
         "8288910a-1ad6-47df-b127-118bc1d2ce24",
+        "b7034bf2-48fd-492f-a089-3169873730db",
+        "13c388e5-8dd3-4462-9284-ec3f2c9aabc6",
         "7120c076-9673-4f15-a579-5efa29fefb6f",
-        "bf089f50-667c-4417-a84a-9478625741a1",
-        "11f6643a-6bb6-4db9-a512-9c0eefc8c3b8",
         "1431e891-e819-4fa1-8416-0cb3956f0e39",
         "2830007b-b9f5-4f33-86cf-680e0a91ca8d",
         "0a71f30d-dba2-4bca-a64d-c3cc2ed17e7d",
-        "8d4704f6-d81d-4390-9ec5-af58698bef51",
-        "b7034bf2-48fd-492f-a089-3169873730db",
-        "13c388e5-8dd3-4462-9284-ec3f2c9aabc6",
-        "9cd2d8a0-a8b4-46d7-b3a7-b1609af99285",
-        "2cf20ef7-ba29-4dd5-8c98-df0b96ba3c5b",
         "1be7473b-00b2-4ad9-a7c0-356b86de67a7",
         "83a6f5b6-88e4-4eb3-9899-a085ea9c58bd",
         "2d534ed0-517d-48ca-8370-8659965f32c4",
-        "a405ef88-bdbe-486d-9fb3-6c91aa4e1509",
-        "51f9d856-95f4-4741-bf4d-afe15438ff29",
         "883720d7-3346-4495-85a0-add8b3d7a51f"
       ],
       "settings": {
         "setwidth": "container",
-        "media_style": "media-bottom",
-        "media_size": "normal",
+        "media_style": "media-left",
+        "media_size": "large",
         "image_size": "portrait",
         "enable_video_looping": true,
         "stock_enable": true,
