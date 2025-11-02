@@ -600,6 +600,7 @@
           "57fbd2ee-62ca-482f-a017-4a435f4fdb87": {
             "type": "image",
             "settings": {
+              "image": "shopify://shop_images/Frame_46.png",
               "alignment": "center center",
               "text_alignment": "left center",
               "bgwrap": "#f8ede7",
@@ -628,48 +629,15 @@
               "bg_button_hover_2": "#ff6f2e",
               "color_button_hover_2": "#ffffff"
             }
-          },
-          "7b190f33-76f8-4625-b588-eafdb8c9772b": {
-            "type": "image",
-            "settings": {
-              "alignment": "center center",
-              "text_alignment": "left center",
-              "bgwrap": "#f8ede7",
-              "show_overlay": false,
-              "gradient_overlay": false,
-              "bg_overlay": "#000000",
-              "opacity_overlay": 0.4,
-              "slide_toptitle": "Discover the Latest Trends",
-              "slide_toptitle_color": "#e35353",
-              "slide_title": "Elevate Your Style with<br> Our New Collection",
-              "slide_title_color": "#000000",
-              "subheading": "Get ready to turn heads with our exclusive fashion line.<br> Explore the season's hottest trends.",
-              "subheading_color": "#000000",
-              "button_label": "",
-              "button_link": "",
-              "stylebtns": "btn-theme",
-              "bg_button": "#000000",
-              "color_button": "#ffffff",
-              "bg_button_hover": "#e35353",
-              "color_button_hover": "#ffffff",
-              "button_label_2": "Shop Now",
-              "button_link_2": "#",
-              "stylebtns_2": "btn-theme",
-              "bg_button_2": "#000000",
-              "color_button_2": "#ffffff",
-              "bg_button_hover_2": "#ff6f2e",
-              "color_button_hover_2": "#ffffff"
-            }
           }
         },
         "block_order": [
-          "57fbd2ee-62ca-482f-a017-4a435f4fdb87",
-          "7b190f33-76f8-4625-b588-eafdb8c9772b"
+          "57fbd2ee-62ca-482f-a017-4a435f4fdb87"
         ],
         "settings": {
           "enable_slideshow": true,
           "setwidthout": "full",
-          "slideshow_height_adapt": "960",
+          "slideshow_height_adapt": "adapt",
           "slideshow_height_mobile": "500",
           "setwidth": "container",
           "style_section": "style_1",
