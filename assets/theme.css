@@ -12034,9 +12034,9 @@ blockquote::before {
   margin: 8px 0px;
       justify-content: center; 
 }
-.modal-header.js-drawer-close.py-4{
-  background: black !important;
+.modal-header.js-drawer-close.py-4 button{
+  background: white !important;
 }
-.drawer__nav-item.drawer-nav__item--secondary.d-flex.align-items-center{
+.drawer__nav-item.drawer-nav__item--secondary.d-flex.align-items-center {
   display: flex;
 }
