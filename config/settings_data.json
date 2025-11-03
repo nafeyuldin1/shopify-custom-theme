@@ -1692,7 +1692,7 @@
           "a00daf6f-fb1c-4351-80dc-24e405bf630e": {
             "type": "Item",
             "settings": {
-              "code": "<b>✨ Get 50%+ OFF on all products — Limited Time Only! ⏰</b>",
+              "code": "<b>🎉 Get Free Shipping on Orders Above ₹9000! 💥</b>",
               "button_text": "Shop now",
               "button_link": "shopify://collections"
             }
@@ -2208,9 +2208,9 @@
           "linkhover": "#ffffff",
           "menutext": "#ffffff",
           "menutexthover": "#e8c547",
-          "menudroptexttitle": "#ffffff",
-          "menudroptext": "#ffffff",
-          "menudropbg": "#222222",
+          "menudroptexttitle": "#2f3336",
+          "menudroptext": "#6c747b",
+          "menudropbg": "#ffffff",
           "menudropborder": "#f1f1f1",
           "main_linklist": "quick-links",
           "font_family_menu": "--g-font-2",
@@ -2226,8 +2226,8 @@
           "menu_label_other": "#222222",
           "link_list_search": "",
           "sidebar_search": true,
-          "e_hd_currency": false,
-          "enable_image": false,
+          "e_hd_currency": true,
+          "enable_image": true,
           "enable_name": false,
           "enable_language_selector": false,
           "icon_cart": "icon",
