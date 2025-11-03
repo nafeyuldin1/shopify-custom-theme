@@ -18,6 +18,10 @@
             "e_label": true
           }
         },
+        "air_product_reviews_app_summary_block_QpzxmL": {
+          "type": "shopify://apps/air-product-reviews/blocks/app-summary-block/c4e1e9ca-4d46-4e76-bc39-7e42417cb327",
+          "settings": {}
+        },
         "c5c11045-e3b5-47e4-80d1-25e86ec844cc": {
           "type": "price",
           "settings": {}
@@ -126,10 +130,25 @@
             "trust-heading": "Guarantee safe checkout",
             "width_image": 70
           }
+        },
+        "air_product_reviews_app_block_all_review_tF8FgQ": {
+          "type": "shopify://apps/air-product-reviews/blocks/app-block-all-review/c4e1e9ca-4d46-4e76-bc39-7e42417cb327",
+          "settings": {
+            "air_allReviewsBlock_heading": "All reviews page",
+            "air_allReviewsBlock_useSimpleSummary": false,
+            "air_allReviewsBlock_maxReview": 20,
+            "air_allReviewsBlock_summaryBgColor": "#F8F8F8",
+            "air_allReviewsBlock_bgColor": "#FFFFFF",
+            "air_allReviewsBlock_onlyMedia": false,
+            "air_allReviewsBlock_onlyPositive": false,
+            "air_allReviewsBlock_hideProductThumbnails": false,
+            "air_allReviewsBlock_selectedProduct": []
+          }
         }
       },
       "block_order": [
         "989bce2f-7961-4267-8e6c-40ff4bb0ed64",
+        "air_product_reviews_app_summary_block_QpzxmL",
         "c5c11045-e3b5-47e4-80d1-25e86ec844cc",
         "1affb493-1e14-4893-9876-be8d348ee475",
         "ff32ea77-bcea-43d3-8e38-55894c9d938a",
@@ -145,7 +164,8 @@
         "0a71f30d-dba2-4bca-a64d-c3cc2ed17e7d",
         "83a6f5b6-88e4-4eb3-9899-a085ea9c58bd",
         "2d534ed0-517d-48ca-8370-8659965f32c4",
-        "883720d7-3346-4495-85a0-add8b3d7a51f"
+        "883720d7-3346-4495-85a0-add8b3d7a51f",
+        "air_product_reviews_app_block_all_review_tF8FgQ"
       ],
       "settings": {
         "setwidth": "container",
@@ -284,6 +304,31 @@
         "marginsection": "0px 0px 0px 0px",
         "marginmobile": "0px 0px 0px 0px"
       }
+    },
+    "1762157036ce1ea2de": {
+      "type": "apps",
+      "blocks": {
+        "air_product_reviews_app_block_review_list_rFBw7Y": {
+          "type": "shopify://apps/air-product-reviews/blocks/app-block-review-list/c4e1e9ca-4d46-4e76-bc39-7e42417cb327",
+          "settings": {
+            "air_blockreviews_summaryHeading": "Reviews",
+            "air_blockreviews_layout": "list",
+            "air_blockreviews_singleStarColor": "#16A086",
+            "air_blockreviews_primaryColor": "#121212"
+          }
+        }
+      },
+      "block_order": [
+        "air_product_reviews_app_block_review_list_rFBw7Y"
+      ],
+      "settings": {
+        "animation": "",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "bgsection": "#ffffff"
+      }
     }
   },
   "order": [
@@ -292,6 +337,7 @@
     "product-content",
     "product-recommendations",
     "be561305-5bee-4018-a668-c8770086ba5b",
-    "product-recent"
+    "product-recent",
+    "1762157036ce1ea2de"
   ]
 }
