@@ -12037,6 +12037,7 @@ blockquote::before {
 .modal-header.js-drawer-close.py-4 button{
   background: white !important;
 }
-.drawer__nav-item.drawer-nav__item--secondary.d-flex.align-items-center {
+.drawer__nav-item.drawer-nav__item--secondary.d-flex.align-items-center,
+.drawer__nav-item.drawer-nav__item--secondary py-3.pl-2.d-flex{
   display: flex;
 }
