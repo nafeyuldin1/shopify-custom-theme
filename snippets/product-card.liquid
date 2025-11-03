@@ -357,12 +357,8 @@
   </div>
   <div class="product-card__info">
     {{ vendor }}
-  <div
-  class="AirReviews-Widget AirReviews-Widget--Stars"
-  style="margin-top:0.7rem"
-  data-review-avg="{{ product.metafields.air_reviews_product.review_avg }}"
-  data-review-count="{{ product.metafields.air_reviews_product.review_count }}"
-></div>
+    <a href="{{ product.url | within: collection }}" title="{{ product.title }}" class="d-block product-card__name {% if settings.t_product %} text-uppercase {% endif %}">{{ product.title }}</a>
+    {{ review }}
     {{ price }}
     {%- render 'swatch-grid-1' , product : product -%}
   </div>
