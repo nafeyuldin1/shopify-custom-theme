@@ -12041,3 +12041,7 @@ blockquote::before {
 .drawer__nav-item.drawer-nav__item--secondary py-3.pl-2.d-flex{
   display: flex;
 }
+.product-form__cart-submit {
+  background: black;
+  color: white;
+}
