@@ -12034,3 +12034,6 @@ blockquote::before {
   margin: 8px 0px;
       justify-content: center; 
 }
+.modal-header.js-drawer-close.py-4{
+  background: black !important;
+}
