@@ -50,7 +50,7 @@
         "heading_h94wTt"
       ],
       "custom_css": [
-        "img{object-position: bottom ;}"
+        "img {object-position: bottom;}"
       ],
       "name": "Parallax banner",
       "settings": {
@@ -60,7 +60,7 @@
         "parrallax_enable": true,
         "image": "shopify://shop_images/123.png",
         "height_section": "250",
-        "height_section_mobile": "350",
+        "height_section_mobile": "200",
         "align": "center",
         "position_text": "mid-center",
         "bg_box": "rgba(0,0,0,0)",
