@@ -2208,9 +2208,9 @@
           "linkhover": "#ffffff",
           "menutext": "#ffffff",
           "menutexthover": "#e8c547",
-          "menudroptexttitle": "#2f3336",
-          "menudroptext": "#6c747b",
-          "menudropbg": "#ffffff",
+          "menudroptexttitle": "#ffffff",
+          "menudroptext": "#ffffff",
+          "menudropbg": "#222222",
           "menudropborder": "#f1f1f1",
           "main_linklist": "quick-links",
           "font_family_menu": "--g-font-2",
@@ -2226,8 +2226,8 @@
           "menu_label_other": "#222222",
           "link_list_search": "",
           "sidebar_search": true,
-          "e_hd_currency": true,
-          "enable_image": true,
+          "e_hd_currency": false,
+          "enable_image": false,
           "enable_name": false,
           "enable_language_selector": false,
           "icon_cart": "icon",
@@ -2330,7 +2330,7 @@
           "a0427cc6-35bf-4e6f-8da6-9542b963b62f"
         ],
         "custom_css": [
-          "@media screen and (max-width: 750px) {.container .row {gap: 25px; } .site-footer__section h4{text-align: start; }}"
+          "@media screen and (max-width: 750px) {.container .row {gap: 25px; } .site-footer__section h4 {text-align: start; }}"
         ],
         "settings": {
           "setwidth": "container",
