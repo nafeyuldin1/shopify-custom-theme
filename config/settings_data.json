@@ -1703,7 +1703,7 @@
           "a00daf6f-fb1c-4351-80dc-24e405bf630e"
         ],
         "custom_css": [
-          ".announcement-text-left.small{display: none;}"
+          ".announcement-text-left.small {display: none;}"
         ],
         "settings": {
           "enable": true,
@@ -2328,6 +2328,9 @@
           "02938bc4-37e0-4199-a42d-5120a9cb648f",
           "89eb5f1e-2260-49c8-840c-f97823a94c9a",
           "a0427cc6-35bf-4e6f-8da6-9542b963b62f"
+        ],
+        "custom_css": [
+          "@media screen and (max-width: 750px){.container .row{gap: 25px;} }"
         ],
         "settings": {
           "setwidth": "container",
