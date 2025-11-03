@@ -12044,4 +12044,8 @@ blockquote::before {
 .product-form__cart-submit {
   background: black;
   color: white;
+  
+}
+.product-form__cart-submit:hover{
+  color: black !important;
 }
