@@ -49,6 +49,9 @@
       "block_order": [
         "heading_h94wTt"
       ],
+      "custom_css": [
+        "img{object-position: bottom ;}"
+      ],
       "name": "Parallax banner",
       "settings": {
         "animation": "",
