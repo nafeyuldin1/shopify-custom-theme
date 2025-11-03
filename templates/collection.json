@@ -59,7 +59,7 @@
         "bgsection": "#ffffff",
         "parrallax_enable": true,
         "image": "shopify://shop_images/123.png",
-        "height_section": "250",
+        "height_section": "400",
         "height_section_mobile": "200",
         "align": "center",
         "position_text": "mid-center",
