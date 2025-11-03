@@ -49,9 +49,12 @@
   </div>
 {% endcapture %}
 {% capture review %}
-  {%- if settings.enable_review -%}
-  <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
-  {%- endif -%}
+ <div
+  class="AirReviews-Widget AirReviews-Widget--Stars"
+  style="margin-top:0.7rem"
+  data-review-avg="{{ product.metafields.air_reviews_product.review_avg }}"
+  data-review-count="{{ product.metafields.air_reviews_product.review_count }}"
+></div>
 {% endcapture %}
 {%- liquid
   assign item = settings.productgrid
