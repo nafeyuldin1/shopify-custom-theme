@@ -12030,3 +12030,7 @@ blockquote::before {
 .section-header.text-center{
  margin-bottom: 30px;
 }
+.product-card__info .AirReviews-Widget .AirReviews-StarRatingWrapper{
+  margin: 80px 0px;
+      justify-content: center; 
+}
