@@ -18,12 +18,14 @@
     },
     "collection-banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": true,
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "img_bannercollection": "shopify://shop_images/123.png",
         "style_banner": "full",
         "heading_size": "h2",
-        "img_height": "350px",
+        "img_height": "orginal",
         "bg_color": "#f3f3f3",
         "image_text_color": "#ffffff",
         "image_overlay_color": "#000000",
@@ -31,6 +33,41 @@
         "enable_collection": true,
         "enable_count": true,
         "link_list_head": ""
+      }
+    },
+    "parallax_banner_LUbkPi": {
+      "type": "parallax-banner",
+      "blocks": {
+        "heading_h94wTt": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ collection.title }}",
+            "size_text": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_h94wTt"
+      ],
+      "name": "Parallax banner",
+      "settings": {
+        "animation": "",
+        "setwidth": "full",
+        "bgsection": "#ffffff",
+        "parrallax_enable": true,
+        "image": "shopify://shop_images/123.png",
+        "height_section": "450",
+        "height_section_mobile": "350",
+        "align": "center",
+        "position_text": "mid-center",
+        "bg_box": "rgba(0,0,0,0)",
+        "opacity_bgbox": 1,
+        "title_color": "#ffffff",
+        "bg_overlay": "#000",
+        "gradient_bg": "",
+        "opacity_bg_overlay": 0.1,
+        "paddingsection": "0px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px"
       }
     },
     "product-grid": {
@@ -62,6 +99,7 @@
   "order": [
     "collection-promo",
     "collection-banner",
+    "parallax_banner_LUbkPi",
     "product-grid"
   ]
 }
