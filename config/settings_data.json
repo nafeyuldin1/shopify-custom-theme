@@ -2330,7 +2330,7 @@
           "a0427cc6-35bf-4e6f-8da6-9542b963b62f"
         ],
         "custom_css": [
-          "@media screen and (max-width: 750px){.container .row{gap: 25px;} }"
+          "@media screen and (max-width: 750px) {.container .row {gap: 25px; } .site-footer__section h4{text-align: start; }}"
         ],
         "settings": {
           "setwidth": "container",
