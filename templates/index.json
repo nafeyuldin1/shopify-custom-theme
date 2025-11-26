@@ -36,7 +36,7 @@
       "custom_css": [
         ".collection-card-1-infor {display: none;}",
         "@media screen and (max-width: 750px) {.collectionlist-slider {display: grid; gap: 20px; }}",
-        ".collection-card__image{border-radius: 3%; overflow: hidden;}"
+        ".collection-card__image {border-radius: 3%; overflow: hidden;}"
       ],
       "settings": {
         "animation": "",
@@ -89,6 +89,7 @@
         "heading_KWFJqn",
         "button_zVtmV4"
       ],
+      "disabled": true,
       "name": "Parallax banner",
       "settings": {
         "animation": "",
@@ -129,7 +130,7 @@
         "urlbtn": "",
         "paddingsection": "0px 0px 20px 0px",
         "paddingmobile": "20px 0px 0px 0px",
-        "marginsection": "0px 0px 0px 0px",
+        "marginsection": "40px 0px 0px 0px",
         "marginmobile": "0px 0px 0px 0px"
       }
     },
