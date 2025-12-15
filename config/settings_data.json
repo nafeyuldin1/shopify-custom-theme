@@ -715,7 +715,7 @@
           "setwidthout": "container-fluid",
           "slideshow_height_adapt": "adapt",
           "slideshow_height_mobile": "500",
-          "setwidth": "container",
+          "setwidth": "container-fluid",
           "style_section": "style_1",
           "slideshow_mobile": true,
           "autorotate": true,
