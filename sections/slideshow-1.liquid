@@ -636,7 +636,7 @@ html:not(.no-js) .slideshow.slick-initialized .slideshow__slide{
 {% assign has_collection = 1 %}
 {% endif %}
 {%- endfor -%}
-<div class="{{ section.settings.setwidthout }}" data-section-id="{{ section.id }}" data-section-type="slideshow-section">
+<div class="{{ section.settings.setwidthout }} container" data-section-id="{{ section.id }}" data-section-type="slideshow-section">
   {%- if section.blocks.size > 0 -%}
   
   <div id="SlideshowWrapper-{{ section.id }}" class="slideshow-wrapper" role="region" aria-label="slideshow" aria-describedby="slideshow-info" tabindex="-1">
