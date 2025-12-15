@@ -707,7 +707,7 @@
           "image_9QnCNb"
         ],
         "custom_css": [
-          ".container-fluid{max-width: 1200px;}",
+          ".container-fluid {max-width: 1300px; height: auto;}",
           "@media screen and (max-width: 750px) {.slideshow__text-wrap--desktop .slideshow__text-content {top: 35%; }}",
           ".slideshow__btn-wrapper .btn2:hover {background: black !important; color: white;}"
         ],
@@ -715,7 +715,7 @@
           "enable_slideshow": true,
           "setwidthout": "container-fluid",
           "slideshow_height_adapt": "adapt",
-          "slideshow_height_mobile": "500",
+          "slideshow_height_mobile": "adapt",
           "setwidth": "container-fluid",
           "style_section": "style_1",
           "slideshow_mobile": true,
