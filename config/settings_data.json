@@ -707,7 +707,7 @@
           "image_9QnCNb"
         ],
         "custom_css": [
-          ".container-fluid {max-width: 1300px; height: auto;}",
+          ".container-fluid {max-width: 1250px; height: auto;}",
           "@media screen and (max-width: 750px) {.slideshow__text-wrap--desktop .slideshow__text-content {top: 35%; }}",
           ".slideshow__btn-wrapper .btn2:hover {background: black !important; color: white;}"
         ],
