@@ -713,7 +713,7 @@
         ],
         "settings": {
           "enable_slideshow": true,
-          "setwidthout": "container-fluid",
+          "setwidthout": "full",
           "slideshow_height_adapt": "adapt",
           "slideshow_height_mobile": "adapt",
           "setwidth": "container-fluid",
