@@ -2260,7 +2260,8 @@
           "bd742a30-30ad-494f-bb7a-d35c5cd1f2ae"
         ],
         "custom_css": [
-          ".search-modal.modal__content {background: white;}"
+          ".search-modal.modal__content {background: white;}",
+          ".js-wishlist-count.js-wishlist-indicator{color: black;}"
         ],
         "settings": {
           "logo": "shopify://shop_images/WhatsApp_Image_2025-10-24_at_1.35.34_AM_1-removebg-preview.png",
