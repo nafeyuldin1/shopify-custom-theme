@@ -714,6 +714,7 @@
         "settings": {
           "enable_slideshow": true,
           "setwidthout": "full",
+          "container_max_width": 1200,
           "slideshow_height_adapt": "adapt",
           "slideshow_height_mobile": "adapt",
           "setwidth": "container-fluid",
@@ -2258,7 +2259,9 @@
           "0f4d122e-cf9d-4fbf-8082-85a6cb05155f",
           "bd742a30-30ad-494f-bb7a-d35c5cd1f2ae"
         ],
-        "custom_css": [],
+        "custom_css": [
+          ".search-modal.modal__content gradient{background: white;}"
+        ],
         "settings": {
           "logo": "shopify://shop_images/WhatsApp_Image_2025-10-24_at_1.35.34_AM_1-removebg-preview.png",
           "logo_white": "shopify://shop_images/WhatsApp_Image_2025-10-24_at_1.35.34_AM_1-removebg-preview.png",
