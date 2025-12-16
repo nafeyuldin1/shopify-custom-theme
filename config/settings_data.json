@@ -2271,7 +2271,7 @@
           "hover_transparent": true,
           "enable_white": true,
           "setwidth": "container",
-          "layout_header": "logo-left-navigation-left",
+          "layout_header": "logo-left-navigation-center",
           "type_sticky": "sticky-top",
           "height_header": "normal",
           "topbarbg": "#222222",
