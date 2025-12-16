@@ -2261,7 +2261,7 @@
         ],
         "custom_css": [
           ".search-modal.modal__content {background: white;}",
-          ".js-wishlist-count.js-wishlist-indicator{color: black;}"
+          ".js-wishlist-count.js-wishlist-indicator {color: black;}"
         ],
         "settings": {
           "logo": "shopify://shop_images/WhatsApp_Image_2025-10-24_at_1.35.34_AM_1-removebg-preview.png",
@@ -2271,7 +2271,7 @@
           "hover_transparent": true,
           "enable_white": true,
           "setwidth": "container",
-          "layout_header": "logo-center-navigation-split",
+          "layout_header": "logo-left-navigation-left",
           "type_sticky": "sticky-top",
           "height_header": "normal",
           "topbarbg": "#222222",
