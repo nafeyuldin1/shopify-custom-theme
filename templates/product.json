@@ -58,11 +58,12 @@
       ],
       "custom_css": [
         "h1 {line-height: 1.2; margin: 10px 0px;}",
-        ".img-fluid.w-100.lazyloaded{margin: 15px 0px;}"
+        ".img-fluid.w-100.lazyloaded {margin: 15px 0px;}"
       ],
       "settings": {
         "setwidth": "container",
         "media_style": "media-left",
+        "mobile_thumbnail_style": "hide",
         "media_size": "normal",
         "image_size": "auto",
         "enable_video_looping": true,
