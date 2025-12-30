@@ -57,7 +57,8 @@
         "description_Hg74ND"
       ],
       "custom_css": [
-        "h1{line-height: 1.2; margin: 10px 0px;}"
+        "h1 {line-height: 1.2; margin: 10px 0px;}",
+        ".img-fluid.w-100.lazyloaded{margin: 15px 0px;}"
       ],
       "settings": {
         "setwidth": "container",
