@@ -171,7 +171,6 @@
     },
     "product-recent": {
       "type": "recently-viewed",
-      "disabled": true,
       "settings": {
         "enable": true,
         "animation": "fade-up",
