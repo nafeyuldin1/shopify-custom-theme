@@ -1,4 +1,3 @@
-<!-- product-template-1.liquid -->
 {{ 'photoswipe.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'photoswipe.min.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'photoswipe-ui-default.min.js' | asset_url }}" defer="defer"></script>
@@ -364,9 +363,13 @@
     .main-content {
       padding-top: 20px;
     }
+    /* Mobile Thumbnail Logic */
+    .mobile-thumbs-hide .photos__item--thumbs {
+      display: none !important;
+    }
   }
 </style>
-<div class="{{ section.settings.setwidth }} js-recently-view" itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" 
+<div class="{{ section.settings.setwidth }} js-recently-view mobile-thumbs-{{ section.settings.mobile_thumbnail_style }}" itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" 
   data-id="{{ section.settings.media_style }}" 
   data-section-id="{{ section.id }}" 
   data-section-type="product" 
@@ -405,7 +408,7 @@
       {% unless media_style == 'media-list' or media_style == 'media-grid' or media_style == 'media-collage-1' or media_style == 'media-collage-2' %} 
       photos-sticky 
     {% endunless %}">
-    {% render 'product-media', product : product, featured_image: featured_img, image_size: section.settings.image_size, loop: section.settings.enable_video_looping, media_style: section.settings.media_style %}
+    {% render 'product-media', product : product, featured_image: featured_img, image_size: section.settings.image_size, loop: section.settings.enable_video_looping, media_style: section.settings.media_style, mobile_thumbnail_style: section.settings.mobile_thumbnail_style %}
     </div>
     <div class="{{ right_size }} order-1 
       {% if  media_style == 'media-list' or media_style == 'media-grid' or media_style == 'media-collage-1' or media_style == 'media-collage-2' %} 
@@ -495,7 +498,7 @@
                           assign sale_percent = product.compare_at_price_max | minus: product.price | times: 100 | divided_by: product.compare_at_price_max
                       endif
                   -%}
-                    
+                     
                       {%- if settings.tagsale == 'percent' -%}
                           -{{ sale_percent | append: '%' }}
                       {%- elsif settings.tagsale == 'txt' -%}
@@ -675,7 +678,7 @@
             {%- when 'related-product' -%} 
               <div class="product-block">
                   {%- if block.settings.title_heading != blank -%}
-                     <h4 class="mb-4">{{ block.settings.title_heading }}</h4>
+                      <h4 class="mb-4">{{ block.settings.title_heading }}</h4>
                   {%- endif -%}
                   <div class="row">
                     {%- for product in block.settings.product_list limit: 3 -%}
@@ -750,7 +753,7 @@
                     {% when 'tag' %} <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-tag" viewBox="0 0 64 64"><defs><style>.a{fill:none;stroke:#000;stroke-width:2px}</style></defs><path class="a" d="M46.69 10.34l-10.55.07-25.8 25.8 17.45 17.45 25.8-25.8.07-10.55-6.97-6.97z"/><circle class="a" cx="43.95" cy="20.05" r="3.53"/><path class="a" d="M14.4 32.15L31.85 49.6"/></svg>
                     {% when 'truck' %} <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-truck" viewBox="0 0 64 64"><defs><style>.a{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}</style></defs><path class="a" d="M16.5 43.22H6.88V16.5h33.14v26.72H23.94M45.42 43.22h-5.4V30.4h17.1v12.82h-4.23M57.12 30.4l-6.41-8.56H40.02"/><circle class="a" cx="20.24" cy="43.76" r="3.74"/><path class="a" d="M45.42 43.23a3.82 3.82 0 1 1 0 .37v-.37"/></svg>
                   {% endcase %}
-                {%- endif -%}
+                {% endif %}
                   {{ block.settings.title_tab | default: 'Question' }}
                 </div>
                 <div id="tabp-{{ block.id }}" class="collapse tab-content">
@@ -1113,6 +1116,22 @@ initPhotoSwipeFromDOM('.my-gallery');
       ],
       "default": "media-bottom",
       "label": "Style"
+    },
+    {
+      "type": "select",
+      "id": "mobile_thumbnail_style",
+      "label": "Mobile: Thumbnail Layout",
+      "default": "show",
+      "options": [
+        {
+          "value": "show",
+          "label": "Show Thumbnails"
+        },
+        {
+          "value": "hide",
+          "label": "Hide Thumbnails"
+        }
+      ]
     },
     {
       "type": "select",
