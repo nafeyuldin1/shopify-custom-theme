@@ -58,7 +58,7 @@
       ],
       "settings": {
         "setwidth": "container",
-        "media_style": "media-left",
+        "media_style": "media-bottom",
         "media_size": "normal",
         "image_size": "auto",
         "enable_video_looping": true,
