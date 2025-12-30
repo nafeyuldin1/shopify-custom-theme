@@ -56,6 +56,9 @@
         "8288910a-1ad6-47df-b127-118bc1d2ce24",
         "description_Hg74ND"
       ],
+      "custom_css": [
+        "h1{line-height: 1.2; margin: 10px 0px;}"
+      ],
       "settings": {
         "setwidth": "container",
         "media_style": "media-left",
