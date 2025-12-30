@@ -22,6 +22,12 @@
           "type": "price",
           "settings": {}
         },
+        "image_FFnBia": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Badges_001.webp"
+          }
+        },
         "8288910a-1ad6-47df-b127-118bc1d2ce24": {
           "type": "buttons",
           "settings": {
@@ -46,6 +52,7 @@
       "block_order": [
         "989bce2f-7961-4267-8e6c-40ff4bb0ed64",
         "c5c11045-e3b5-47e4-80d1-25e86ec844cc",
+        "image_FFnBia",
         "8288910a-1ad6-47df-b127-118bc1d2ce24",
         "description_Hg74ND"
       ],
