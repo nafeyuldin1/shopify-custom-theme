@@ -36,7 +36,8 @@
       "custom_css": [
         ".collection-card-1-infor {display: none;}",
         "@media screen and (max-width: 750px) {.collectionlist-slider {display: grid; gap: 20px; }}",
-        ".collection-card__image {border-radius: 3%; overflow: hidden;}"
+        ".collection-card__image {border-radius: 3%; overflow: hidden;}",
+        "h3 {font-size: 30px;}"
       ],
       "settings": {
         "animation": "",
@@ -273,108 +274,235 @@
     },
     "collection_carousel_NwM4J4": {
       "type": "collection-carousel",
+      "name": "Collections Carousel",
+      "settings": {}
+    },
+    "list_image_yGJEzC": {
+      "type": "list-image",
       "blocks": {
-        "collection_slide_YFqkzM": {
-          "type": "collection_slide",
+        "image_item_ngMqL9": {
+          "type": "image_item",
           "settings": {
-            "collection": "",
-            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_10_2bb136f7-c4b4-4970-aa85-265947c369e0.png?v=1752854533",
-            "title": "EU 38",
-            "url": "/collections/men-eur-38"
+            "image": "shopify://shop_images/Group_1_copy_10_2bb136f7-c4b4-4970-aa85-265947c369e0.webp",
+            "image_radius": 0,
+            "title_text": "EU 38",
+            "title_fontsize": 16,
+            "title_color": "#000000",
+            "product": "",
+            "top": 30,
+            "left": 60
           }
         },
-        "collection_slide_NewqnV": {
-          "type": "collection_slide",
+        "image_item_HrE6BX": {
+          "type": "image_item",
           "settings": {
-            "collection": "",
-            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_11.png?v=1752854534",
-            "title": "EU 39",
-            "url": "/collections/men-eur-39"
+            "image": "shopify://shop_images/Group_1_copy_11.webp",
+            "image_radius": 0,
+            "title_text": "EU 39",
+            "title_fontsize": 16,
+            "title_color": "#000000",
+            "product": "",
+            "top": 30,
+            "left": 60
           }
         },
-        "collection_slide_4C37Hj": {
-          "type": "collection_slide",
+        "image_item_erybtw": {
+          "type": "image_item",
           "settings": {
-            "collection": "",
-            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_12.png?v=1752854533",
-            "title": "EU 40",
-            "url": "/collections/men-eur-40"
+            "image": "shopify://shop_images/Group_1_copy_12.webp",
+            "image_radius": 0,
+            "title_text": "EU 40",
+            "title_fontsize": 16,
+            "title_color": "#000000",
+            "product": "",
+            "top": 30,
+            "left": 60
           }
         },
-        "collection_slide_nFKbpe": {
-          "type": "collection_slide",
+        "image_item_bcVw9p": {
+          "type": "image_item",
           "settings": {
-            "collection": "",
-            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_13.png?v=1752854534",
-            "title": "EU 41",
-            "url": "/collections/men-eur-41"
+            "image": "shopify://shop_images/Group_1_copy_13.webp",
+            "image_radius": 0,
+            "title_text": "EU 41",
+            "title_fontsize": 16,
+            "title_color": "#000000",
+            "product": "",
+            "top": 30,
+            "left": 60
           }
         },
-        "collection_slide_4J3GaE": {
-          "type": "collection_slide",
+        "image_item_rzcn79": {
+          "type": "image_item",
           "settings": {
-            "collection": "",
-            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_14.png?v=1752854533",
-            "title": "EU 42",
-            "url": "/collections/men-eur-42"
+            "image": "shopify://shop_images/Group_1_copy_14.webp",
+            "image_radius": 0,
+            "title_text": "EU 42",
+            "title_fontsize": 16,
+            "title_color": "#000000",
+            "product": "",
+            "top": 30,
+            "left": 60
           }
         },
-        "collection_slide_JyFcmC": {
-          "type": "collection_slide",
+        "image_item_fJncMk": {
+          "type": "image_item",
           "settings": {
-            "collection": "",
-            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_15.png?v=1752854533",
-            "title": "EU 43",
-            "url": "/collections/men-eur-43"
-          }
-        },
-        "collection_slide_8FMYde": {
-          "type": "collection_slide",
-          "settings": {
-            "collection": "",
-            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/44_size.png?v=1756523282",
-            "title": "EU 44",
-            "url": "/collections/men-eur-44"
-          }
-        },
-        "collection_slide_yDVhYb": {
-          "type": "collection_slide",
-          "settings": {
-            "collection": "",
-            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_16.png?v=1752854534",
-            "title": "EU 45",
-            "url": "/collections/men-eur-45"
-          }
-        },
-        "collection_slide_AbyDPB": {
-          "type": "collection_slide",
-          "settings": {
-            "collection": "",
-            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_17.png?v=1752854533",
-            "title": "EU 46",
-            "url": "/collections/men-eur-46"
+            "image": "shopify://shop_images/Group_1_copy_15_4a69366e-eaa4-4988-8e12-db6b342f3b67.webp",
+            "image_radius": 0,
+            "title_text": "EU 43",
+            "title_fontsize": 16,
+            "title_color": "#000000",
+            "product": "",
+            "top": 30,
+            "left": 60
           }
         }
       },
       "block_order": [
-        "collection_slide_YFqkzM",
-        "collection_slide_NewqnV",
-        "collection_slide_4C37Hj",
-        "collection_slide_nFKbpe",
-        "collection_slide_4J3GaE",
-        "collection_slide_JyFcmC",
-        "collection_slide_8FMYde",
-        "collection_slide_yDVhYb",
-        "collection_slide_AbyDPB"
+        "image_item_ngMqL9",
+        "image_item_HrE6BX",
+        "image_item_erybtw",
+        "image_item_bcVw9p",
+        "image_item_rzcn79",
+        "image_item_fJncMk"
       ],
-      "name": "Collections Carousel",
+      "custom_css": [
+        "h3 {font-size: 30px;}"
+      ],
+      "name": "List image",
       "settings": {
-        "heading": "SHOP BY MEN'S SIZE",
-        "bg_color": "#f5f5f5",
-        "mg_top": 60,
-        "mg_bottom": 0,
-        "pd_top": 10,
-        "pd_bottom": 40
+        "animation": "",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "setwidth": "container",
+        "bgsection": "transparent",
+        "title_top": "",
+        "title": "SHOP BY MEN'S SIZE",
+        "des": "",
+        "align-heading": "center",
+        "arrows": true,
+        "draggable": true,
+        "dots": true,
+        "infinite": true,
+        "rows": "1",
+        "show": 6
+      }
+    },
+    "list_image_DiGgMF": {
+      "type": "list-image",
+      "blocks": {
+        "image_item_wyhamK": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_1_275d415a-7a4a-4179-92b2-be31b8d894a4.avif",
+            "image_radius": 0,
+            "title_text": "EU 36",
+            "title_fontsize": 16,
+            "title_color": "#000000",
+            "product": "",
+            "top": 30,
+            "left": 60
+          }
+        },
+        "image_item_zVVVf4": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_1_copy.avif",
+            "image_radius": 0,
+            "title_text": "EU 37",
+            "title_fontsize": 16,
+            "title_color": "#000000",
+            "product": "",
+            "top": 30,
+            "left": 60
+          }
+        },
+        "image_item_3nT67F": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_1_copy_3.avif",
+            "image_radius": 0,
+            "title_text": "EU 38",
+            "title_fontsize": 16,
+            "title_color": "#000000",
+            "product": "",
+            "top": 30,
+            "left": 60
+          }
+        },
+        "image_item_DfmBW9": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_1_copy_4.avif",
+            "image_radius": 0,
+            "title_text": "EU 39",
+            "title_fontsize": 16,
+            "title_color": "#000000",
+            "product": "",
+            "top": 30,
+            "left": 60
+          }
+        },
+        "image_item_rb3VRK": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_1_copy_11_a42e6715-89b8-4fb1-b559-751eced8868c.avif",
+            "image_radius": 0,
+            "title_text": "EU 40",
+            "title_fontsize": 16,
+            "title_color": "#000000",
+            "product": "",
+            "top": 30,
+            "left": 60
+          }
+        },
+        "image_item_rAbUgb": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_1_copy_12_f983d7ef-b1b1-4459-9b6e-9f4038e7408a.avif",
+            "image_radius": 0,
+            "title_text": "EU 41",
+            "title_fontsize": 16,
+            "title_color": "#000000",
+            "product": "",
+            "top": 30,
+            "left": 60
+          }
+        }
+      },
+      "block_order": [
+        "image_item_wyhamK",
+        "image_item_zVVVf4",
+        "image_item_3nT67F",
+        "image_item_DfmBW9",
+        "image_item_rb3VRK",
+        "image_item_rAbUgb"
+      ],
+      "custom_css": [
+        "h3 {font-size: 30px;}"
+      ],
+      "name": "List image",
+      "settings": {
+        "animation": "",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "setwidth": "container",
+        "bgsection": "transparent",
+        "title_top": "",
+        "title": "SHOP BY WOMEN'S SIZE",
+        "des": "",
+        "align-heading": "center",
+        "arrows": true,
+        "draggable": true,
+        "dots": true,
+        "infinite": true,
+        "rows": "1",
+        "show": 6
       }
     }
   },
@@ -384,6 +512,8 @@
     "parallax_banner_3zmRTM",
     "07954675-bad5-4a16-8ffa-2392279b713d",
     "faq_accordion_k3iLMJ",
-    "collection_carousel_NwM4J4"
+    "collection_carousel_NwM4J4",
+    "list_image_yGJEzC",
+    "list_image_DiGgMF"
   ]
 }
