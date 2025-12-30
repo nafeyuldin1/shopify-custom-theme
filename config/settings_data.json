@@ -555,7 +555,7 @@
           "519db978-bce0-47e7-8820-fe5f9a9fb3ee"
         ],
         "settings": {
-          "enable": true,
+          "enable": false,
           "duration": 8,
           "text": "Someone recently bought"
         }
@@ -2270,7 +2270,7 @@
           "enable_transparent": false,
           "hover_transparent": true,
           "enable_white": true,
-          "setwidth": "container",
+          "setwidth": "full",
           "layout_header": "logo-left-navigation-center",
           "type_sticky": "sticky-top",
           "height_header": "normal",
