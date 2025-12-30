@@ -18,41 +18,8 @@
             "e_label": true
           }
         },
-        "air_product_reviews_app_summary_block_QpzxmL": {
-          "type": "shopify://apps/air-product-reviews/blocks/app-summary-block/c4e1e9ca-4d46-4e76-bc39-7e42417cb327",
-          "settings": {}
-        },
         "c5c11045-e3b5-47e4-80d1-25e86ec844cc": {
           "type": "price",
-          "settings": {}
-        },
-        "1affb493-1e14-4893-9876-be8d348ee475": {
-          "type": "shortdesc",
-          "settings": {}
-        },
-        "ff32ea77-bcea-43d3-8e38-55894c9d938a": {
-          "type": "separator",
-          "settings": {}
-        },
-        "2cf20ef7-ba29-4dd5-8c98-df0b96ba3c5b": {
-          "type": "text",
-          "settings": {
-            "text": "🔥  30 sold in last 18 hours",
-            "text_style": "subtitle"
-          }
-        },
-        "9cd2d8a0-a8b4-46d7-b3a7-b1609af99285": {
-          "type": "fakeviewer",
-          "settings": {
-            "fake_view_min": 12,
-            "fake_view_max": 30,
-            "fake_view_duration": 4,
-            "fake_view_text_prefix": "👀",
-            "fake_view_text_suffix": "customers are viewing this product"
-          }
-        },
-        "1be7473b-00b2-4ad9-a7c0-356b86de67a7": {
-          "type": "shipping",
           "settings": {}
         },
         "8288910a-1ad6-47df-b127-118bc1d2ce24": {
@@ -68,108 +35,23 @@
             "size_color": "small-38"
           }
         },
-        "b7034bf2-48fd-492f-a089-3169873730db": {
-          "type": "salepoint",
-          "settings": {
-            "icon": "lock",
-            "free_word": "Secure payment"
-          }
-        },
-        "13c388e5-8dd3-4462-9284-ec3f2c9aabc6": {
-          "type": "salepoint",
-          "settings": {
-            "icon": "shield",
-            "free_word": "2 Year Warranty"
-          }
-        },
-        "7120c076-9673-4f15-a579-5efa29fefb6f": {
-          "type": "separator",
-          "settings": {}
-        },
-        "1431e891-e819-4fa1-8416-0cb3956f0e39": {
+        "description_Hg74ND": {
           "type": "description",
-          "disabled": true,
           "settings": {
             "enable_tab": true,
             "title_tab": "Description"
-          }
-        },
-        "2830007b-b9f5-4f33-86cf-680e0a91ca8d": {
-          "type": "tabcustom",
-          "settings": {
-            "title_tab": "Shipping information",
-            "icon": "truck",
-            "answer_content": "<p>- No EU import duties.<br/>- Ships within 1-2 business days.<br/>- Ships in our fully recyclable and biodegradable signature boxes.</p>",
-            "page": ""
-          }
-        },
-        "0a71f30d-dba2-4bca-a64d-c3cc2ed17e7d": {
-          "type": "tabcustom",
-          "settings": {
-            "title_tab": "Care Guide",
-            "icon": "leaf",
-            "answer_content": "<p>Regular<em>care</em>. Use a slightly damp, soft and lint-free cloth for regular dust removal. Always clean in the direction of the grain.</p>",
-            "page": ""
-          }
-        },
-        "83a6f5b6-88e4-4eb3-9899-a085ea9c58bd": {
-          "type": "shippingtime",
-          "disabled": true,
-          "settings": {
-            "shipping_button": "Delivery information",
-            "page_shipping": "about-us"
-          }
-        },
-        "2d534ed0-517d-48ca-8370-8659965f32c4": {
-          "type": "share",
-          "settings": {}
-        },
-        "883720d7-3346-4495-85a0-add8b3d7a51f": {
-          "type": "trust-badge",
-          "settings": {
-            "trust-heading": "Guarantee safe checkout",
-            "width_image": 70
-          }
-        },
-        "air_product_reviews_app_block_all_review_tF8FgQ": {
-          "type": "shopify://apps/air-product-reviews/blocks/app-block-all-review/c4e1e9ca-4d46-4e76-bc39-7e42417cb327",
-          "settings": {
-            "air_allReviewsBlock_heading": "All reviews page",
-            "air_allReviewsBlock_useSimpleSummary": false,
-            "air_allReviewsBlock_maxReview": 20,
-            "air_allReviewsBlock_summaryBgColor": "#f8f8f8",
-            "air_allReviewsBlock_bgColor": "#ffffff",
-            "air_allReviewsBlock_onlyMedia": false,
-            "air_allReviewsBlock_onlyPositive": false,
-            "air_allReviewsBlock_hideProductThumbnails": false,
-            "air_allReviewsBlock_selectedProduct": []
           }
         }
       },
       "block_order": [
         "989bce2f-7961-4267-8e6c-40ff4bb0ed64",
-        "air_product_reviews_app_summary_block_QpzxmL",
         "c5c11045-e3b5-47e4-80d1-25e86ec844cc",
-        "1affb493-1e14-4893-9876-be8d348ee475",
-        "ff32ea77-bcea-43d3-8e38-55894c9d938a",
-        "2cf20ef7-ba29-4dd5-8c98-df0b96ba3c5b",
-        "9cd2d8a0-a8b4-46d7-b3a7-b1609af99285",
-        "1be7473b-00b2-4ad9-a7c0-356b86de67a7",
         "8288910a-1ad6-47df-b127-118bc1d2ce24",
-        "b7034bf2-48fd-492f-a089-3169873730db",
-        "13c388e5-8dd3-4462-9284-ec3f2c9aabc6",
-        "7120c076-9673-4f15-a579-5efa29fefb6f",
-        "1431e891-e819-4fa1-8416-0cb3956f0e39",
-        "2830007b-b9f5-4f33-86cf-680e0a91ca8d",
-        "0a71f30d-dba2-4bca-a64d-c3cc2ed17e7d",
-        "83a6f5b6-88e4-4eb3-9899-a085ea9c58bd",
-        "2d534ed0-517d-48ca-8370-8659965f32c4",
-        "883720d7-3346-4495-85a0-add8b3d7a51f",
-        "air_product_reviews_app_block_all_review_tF8FgQ"
+        "description_Hg74ND"
       ],
       "settings": {
         "setwidth": "container",
-        "media_style": "media-bottom",
+        "media_style": "media-left",
         "media_size": "normal",
         "image_size": "auto",
         "enable_video_looping": true,
