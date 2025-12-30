@@ -1,0 +1,279 @@
+{%- comment -%}
+  Collections Carousel Section
+  Fully Dynamic with Default Data & CDN Links
+{%- endcomment -%}
+
+<link href="//buyoriginal.pk/cdn/shop/t/4/assets/section.css?v=19467530681101428381750432351" rel="stylesheet" type="text/css" media="all">
+<link href="//buyoriginal.pk/cdn/shop/t/4/assets/collection-item-carousel.css?v=71731126868048105821750432349" rel="stylesheet" type="text/css" media="all">
+<link href="//buyoriginal.pk/cdn/shop/t/4/assets/custom-effect.css?v=95852894293946033061750432350" rel="stylesheet" type="text/css" media="all">
+<link href="//buyoriginal.pk/cdn/shop/t/4/assets/slider-settings.css?v=46721434436777892401750432351" rel="stylesheet" type="text/css" media="all">
+<link href="//buyoriginal.pk/cdn/shop/t/4/assets/pre_flickityt4s.min.css?v=80452565481494416591750432351" rel="stylesheet" type="text/css" media="all">
+<link href="//buyoriginal.pk/cdn/shop/t/4/assets/top-head.css?v=2445928691609596931750432352" rel="stylesheet" type="text/css" media="all">
+
+{%- style -%}
+  #shopify-section-{{ section.id }} .t4s-section-inner {
+    --bg-color: {{ section.settings.bg_color }};
+    --mg-top: {{ section.settings.mg_top }}px;
+    --mg-bottom: {{ section.settings.mg_bottom }}px;
+    --pd-top: {{ section.settings.pd_top }}px;
+    --pd-bottom: {{ section.settings.pd_bottom }}px;
+    
+    /* Mobile/Tablet Fallbacks */
+    --mgmb-top: {{ section.settings.mg_top | divided_by: 2 }}px;
+    --mgmb-bottom: {{ section.settings.mg_bottom | divided_by: 2 }}px;
+    --pdmb-top: {{ section.settings.pd_top | divided_by: 2 }}px;
+    --pdmb-bottom: {{ section.settings.pd_bottom | divided_by: 2 }}px;
+  }
+{%- endstyle -%}
+
+<div class="t4s-section-inner t4s-section-show_all t4s-container-wrap">
+  <div class="t4s-container">
+    
+    {%- if section.settings.heading != blank -%}
+      <div class="t4s-top-heading t4s_des_title_1 t4s-text-center" style="--heading-height: px;--tophead_mb: 30px;">
+        <div class="heading-testimonials-star">
+          <h3 class="t4s-section-title t4s-title">
+            <span>{{ section.settings.heading }}</span>
+          </h3>
+        </div>
+      </div>
+    {%- endif -%}
+
+    <div class="t4s-list-collections t4s-list-collections-carousel t4s-image-rounded-true is--scrollbar_false t4s_ratio1_1 t4s_position_8 t4s_cover t4s-flicky-slider t4s-gx-md-30 t4s-gx-10 t4s-row t4s-row-cols-lg-6 t4s-row-cols-md-5 t4s-row-cols-2 flickityt4s"
+         data-flickityt4s-js='{"cellSelector": ".t4s-collection-carousel", "scrollbar": false, "setPrevNextButtons":true, "arrowIcon":"2", "imagesLoaded": 0, "adaptiveHeight": 0, "contain": 1, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left", "wrapAround": false, "prevNextButtons": false, "percentPosition": 1, "pageDots": false, "autoPlay" : 0, "pauseAutoPlayOnHover" : true }'
+         style="--pri-cl: #222222; --pri-hover-cl: #56cfe1; --title-fs: 16px; --title-fw: 500; --space-dots: 10px; --flickity-btn-pos: 30px; --flickity-btn-pos-mb: 10px; --tophead_mb: 30px; --prev-next-top: 85px;">
+      
+      {%- for block in section.blocks -%}
+        {%- assign collection = collections[block.settings.collection] -%}
+        {%- assign title = block.settings.title | default: collection.title | default: 'Collection' -%}
+        {%- assign url = block.settings.url | default: collection.url | default: '#' -%}
+        
+        <div class="t4s-col-item t4s-collection-carousel" {{ block.shopify_attributes }}>
+          <div class="t4s-cat-content t4s-text-center t4s-pr t4s-oh t4s-eff t4s-eff-img-none">
+            <div class="t4s-coll-img t4s-pr t4s-oh">
+              <a class="t4s_cat_item_link t4s-img-wrap t4s-d-block" href="{{ url }}" target="_self">
+                <div class="t4s_ratio t4s-bg-11" style="--aspect-ratioapt: 1.0;">
+                  
+                  {%- if block.settings.image != blank -%}
+                    <img class="t4s-lz--fadeIn t4s-obj-eff lazyautosizes lazyloadt4sed"
+                         src="{{ block.settings.image | image_url: width: 600 }}"
+                         width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}"
+                         loading="lazy"
+                         alt="{{ title | escape }}">
+                  
+                  {%- elsif block.settings.custom_img_url != blank -%}
+                    <img class="t4s-lz--fadeIn t4s-obj-eff lazyautosizes lazyloadt4sed"
+                         src="{{ block.settings.custom_img_url }}"
+                         width="600" height="600"
+                         loading="lazy"
+                         alt="{{ title | escape }}">
+                  
+                  {%- elsif collection.image != blank -%}
+                    <img class="t4s-lz--fadeIn t4s-obj-eff lazyautosizes lazyloadt4sed"
+                         src="{{ collection.image | image_url: width: 600 }}"
+                         width="{{ collection.image.width }}" height="{{ collection.image.height }}"
+                         loading="lazy"
+                         alt="{{ title | escape }}">
+                  
+                  {%- else -%}
+                    {{ 'collection-1' | placeholder_svg_tag: 't4s-placeholder-svg' }}
+                  {%- endif -%}
+                  
+                </div>
+              </a>
+            </div>
+            <a class="t4s-collection-title" href="{{ url }}" target="_self">
+              <span class="t4s-text">{{ title }}</span>
+            </a>
+          </div>  
+        </div>
+      {%- endfor -%}
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collections Carousel",
+  "tag": "section",
+  "class": "t4s-section t4s_bk_flickity t4s-section-all t4s_tp_cdt t4s-collections-carousel",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "SHOP BY MEN'S SIZE"
+    },
+    {
+      "type": "header",
+      "content": "Colors & Style"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Spacing"
+    },
+    {
+      "type": "range",
+      "id": "mg_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Margin Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mg_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Margin Bottom",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "pd_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "pd_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_slide",
+      "name": "Collection Slide",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection (Optional)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Upload Image",
+          "info": "Overrides default and external URL."
+        },
+        {
+          "type": "text",
+          "id": "custom_img_url",
+          "label": "External Image URL",
+          "info": "Paste CDN link here for default images."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Custom Title",
+          "default": "Collection Title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Custom Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collections Carousel",
+      "blocks": [
+        {
+          "type": "collection_slide",
+          "settings": {
+            "title": "EU 38",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_10_2bb136f7-c4b4-4970-aa85-265947c369e0.png?v=1752854533",
+            "url": "/collections/men-eur-38"
+          }
+        },
+        {
+          "type": "collection_slide",
+          "settings": {
+            "title": "EU 39",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_11.png?v=1752854534",
+            "url": "/collections/men-eur-39"
+          }
+        },
+        {
+          "type": "collection_slide",
+          "settings": {
+            "title": "EU 40",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_12.png?v=1752854533",
+            "url": "/collections/men-eur-40"
+          }
+        },
+        {
+          "type": "collection_slide",
+          "settings": {
+            "title": "EU 41",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_13.png?v=1752854534",
+            "url": "/collections/men-eur-41"
+          }
+        },
+        {
+          "type": "collection_slide",
+          "settings": {
+            "title": "EU 42",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_14.png?v=1752854533",
+            "url": "/collections/men-eur-42"
+          }
+        },
+        {
+          "type": "collection_slide",
+          "settings": {
+            "title": "EU 43",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_15.png?v=1752854533",
+            "url": "/collections/men-eur-43"
+          }
+        },
+        {
+          "type": "collection_slide",
+          "settings": {
+            "title": "EU 44",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/44_size.png?v=1756523282",
+            "url": "/collections/men-eur-44"
+          }
+        },
+        {
+          "type": "collection_slide",
+          "settings": {
+            "title": "EU 45",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_16.png?v=1752854534",
+            "url": "/collections/men-eur-45"
+          }
+        },
+        {
+          "type": "collection_slide",
+          "settings": {
+            "title": "EU 46",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_17.png?v=1752854533",
+            "url": "/collections/men-eur-46"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
