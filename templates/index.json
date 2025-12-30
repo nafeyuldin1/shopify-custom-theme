@@ -270,6 +270,112 @@
         "marginsection": "0px 0px 50px 0px",
         "marginmobile": "0px 0px 0px 0px"
       }
+    },
+    "collection_carousel_NwM4J4": {
+      "type": "collection-carousel",
+      "blocks": {
+        "collection_slide_YFqkzM": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_10_2bb136f7-c4b4-4970-aa85-265947c369e0.png?v=1752854533",
+            "title": "EU 38",
+            "url": "/collections/men-eur-38"
+          }
+        },
+        "collection_slide_NewqnV": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_11.png?v=1752854534",
+            "title": "EU 39",
+            "url": "/collections/men-eur-39"
+          }
+        },
+        "collection_slide_4C37Hj": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_12.png?v=1752854533",
+            "title": "EU 40",
+            "url": "/collections/men-eur-40"
+          }
+        },
+        "collection_slide_nFKbpe": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_13.png?v=1752854534",
+            "title": "EU 41",
+            "url": "/collections/men-eur-41"
+          }
+        },
+        "collection_slide_4J3GaE": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_14.png?v=1752854533",
+            "title": "EU 42",
+            "url": "/collections/men-eur-42"
+          }
+        },
+        "collection_slide_JyFcmC": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_15.png?v=1752854533",
+            "title": "EU 43",
+            "url": "/collections/men-eur-43"
+          }
+        },
+        "collection_slide_8FMYde": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/44_size.png?v=1756523282",
+            "title": "EU 44",
+            "url": "/collections/men-eur-44"
+          }
+        },
+        "collection_slide_yDVhYb": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_16.png?v=1752854534",
+            "title": "EU 45",
+            "url": "/collections/men-eur-45"
+          }
+        },
+        "collection_slide_AbyDPB": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "",
+            "custom_img_url": "//buyoriginal.pk/cdn/shop/files/Group_1_copy_17.png?v=1752854533",
+            "title": "EU 46",
+            "url": "/collections/men-eur-46"
+          }
+        }
+      },
+      "block_order": [
+        "collection_slide_YFqkzM",
+        "collection_slide_NewqnV",
+        "collection_slide_4C37Hj",
+        "collection_slide_nFKbpe",
+        "collection_slide_4J3GaE",
+        "collection_slide_JyFcmC",
+        "collection_slide_8FMYde",
+        "collection_slide_yDVhYb",
+        "collection_slide_AbyDPB"
+      ],
+      "name": "Collections Carousel",
+      "settings": {
+        "heading": "SHOP BY MEN'S SIZE",
+        "bg_color": "#f5f5f5",
+        "mg_top": 60,
+        "mg_bottom": 0,
+        "pd_top": 10,
+        "pd_bottom": 40
+      }
     }
   },
   "order": [
@@ -277,6 +383,7 @@
     "featured_collections_1_dAx3cd",
     "parallax_banner_3zmRTM",
     "07954675-bad5-4a16-8ffa-2392279b713d",
-    "faq_accordion_k3iLMJ"
+    "faq_accordion_k3iLMJ",
+    "collection_carousel_NwM4J4"
   ]
 }
