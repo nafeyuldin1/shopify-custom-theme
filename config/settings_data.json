@@ -2270,8 +2270,8 @@
           "enable_transparent": false,
           "hover_transparent": true,
           "enable_white": false,
-          "setwidth": "full",
-          "layout_header": "logo-left-navigation-center",
+          "setwidth": "container",
+          "layout_header": "logo-left-navigation-left",
           "type_sticky": "sticky-top",
           "height_header": "normal",
           "topbarbg": "#222222",
@@ -2301,15 +2301,15 @@
           "menu_label_other": "#222222",
           "link_list_search": "",
           "sidebar_search": true,
-          "e_hd_currency": true,
-          "enable_image": true,
+          "e_hd_currency": false,
+          "enable_image": false,
           "enable_name": false,
           "enable_language_selector": false,
           "icon_cart": "icon",
           "svg_cart": "cart-1",
           "icon_wishlist": "icon",
           "icon_login": "icon",
-          "icon_search": "icon-text"
+          "icon_search": "icon"
         }
       },
       "cookie-policy": {
