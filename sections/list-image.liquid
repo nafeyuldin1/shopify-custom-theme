@@ -4,7 +4,13 @@
     .customstyle{{ section.id }} .list-image-item{
         padding: 0px 15px;
     }
+    /* Fix for slider initialization flicker */
+    .list-image-content:not(.slick-initialized) {
+        display: flex;
+        overflow: hidden;
+    }
 </style>
+
 <div class="customstyle{{ section.id }}" data-aos={{section.settings.animation}}>
     {%- render 'style-section' -%}
     <div class="{{ section.settings.setwidth }}">
@@ -12,19 +18,18 @@
             {%- render 'section-heading' -%}
             
             {% comment %} 
-              Updated: Added data-mobile attribute to pass mobile setting to JS 
+              HTML Container for Slider 
             {% endcomment %}
-            <div class="list-image-content" id="list-image-{{ section.id }}"
+            <div class="list-image-content list-image-slider-{{ section.id }}" 
+            id="list-image-{{ section.id }}"
             data-rows="{{ section.settings.rows }}"
             data-slidesToShow="{{ section.settings.show }}"
             data-mobile="{{ section.settings.show_mobile }}" 
-            data-slidestoscroll="{{ section.settings.show }}"
             data-arrows="{{ section.settings.arrows }}"
             data-dots="{{ section.settings.dots }}" 
             data-draggable="{{ section.settings.draggable }}" 
-            data-infinite="{{ section.settings.infinite }}" 
-            data-section-id="{{ section.id }}"
-            data-section-type="slickCarousels" >
+            data-infinite="{{ section.settings.infinite }}">
+            
             {%- for block in section.blocks -%}
                 {%- case block.type -%}
                 {%- when 'image_item' -%}
@@ -38,7 +43,7 @@
                             left:{{ block.settings.left }}%;
                         }
 
-                        /* NEW STYLES: Image Radius */
+                        /* Image Radius */
                         #block-{{ block.id }} .items-content img,
                         #block-{{ block.id }} .items-content svg {
                             border-radius: {{ block.settings.image_radius }}px;
@@ -46,12 +51,12 @@
                             width: 100%;
                         }
 
-                        /* NEW STYLES: Title Typography */
+                        /* Title Typography */
                         #block-{{ block.id }} .list-image-title {
                             font-size: {{ block.settings.title_fontsize }}px;
                             color: {{ block.settings.title_color }};
                             margin-top: 15px;
-                            text-align: center; /* Center align title by default */
+                            text-align: center;
                             font-weight: 500;
                             line-height: 1.2;
                         }
@@ -62,7 +67,8 @@
                         {%- else -%}
                             {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
                         {% endif %}
-                        {% if  block.settings.product != blank %}
+                        
+                        {% if block.settings.product != blank %}
                         <div class="product-hover-product d-none d-lg-block">
                             <div class="product-hover-icon">
                             <svg class="icon-open" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
@@ -79,7 +85,6 @@
                         {% endif %}
                     </div>
                     
-                    {%- comment -%} NEW TITLE BLOCK {%- endcomment -%}
                     {% if block.settings.title_text != blank %}
                         <div class="list-image-title">
                             {{ block.settings.title_text }}
@@ -93,6 +98,75 @@
         </div>
     </div>
 </div>
+
+{% comment %} 
+  JAVASCRIPT FIX: This script forces the slider to respect the mobile setting 
+{% endcomment %}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    function initSlick{{ section.id | replace: '-', '' }}() {
+        var $slider = $('#list-image-{{ section.id }}');
+        
+        // Settings variables
+        var rows = $slider.data('rows');
+        var desktopShow = $slider.data('slidestoshow');
+        var mobileShow = $slider.data('mobile'); // Setting from schema
+        var arrows = $slider.data('arrows');
+        var dots = $slider.data('dots');
+        var infinite = $slider.data('infinite');
+        var draggable = $slider.data('draggable');
+
+        // Check if slick is already initialized to avoid conflict, then destroy it
+        if ($slider.hasClass('slick-initialized')) {
+            $slider.slick('unslick');
+        }
+
+        // Initialize Slick with Responsive Breakpoints
+        $slider.slick({
+            rows: rows,
+            slidesToShow: desktopShow,
+            slidesToScroll: 1,
+            arrows: arrows,
+            dots: dots,
+            infinite: infinite,
+            draggable: draggable,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: desktopShow,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 767, /* Mobile Breakpoint */
+                    settings: {
+                        slidesToShow: mobileShow, /* Uses your new setting */
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    }
+
+    // Initialize on load
+    // Using setTimeout to ensure jQuery is loaded
+    setTimeout(function(){
+        if (typeof $ !== 'undefined') {
+            initSlick{{ section.id | replace: '-', '' }}();
+        }
+    }, 100);
+
+    // Re-initialize when Shopify Theme Editor updates (for live preview)
+    if (Shopify.designMode) {
+        document.addEventListener('shopify:section:load', function(event) {
+            if (event.detail.sectionId === '{{ section.id }}') {
+                initSlick{{ section.id | replace: '-', '' }}();
+            }
+        });
+    }
+});
+</script>
 
 {% schema %}
 {
@@ -109,28 +183,7 @@
             { "value": "fade-down", "label": "Fade Down"},
             { "value": "fade-left", "label": "Fade Left"},
             { "value": "fade-right", "label": "Fade Right"},
-            { "value": "fade-up-right", "label": "Fade Up Right"},
-            { "value": "fade-up-left", "label": "Fade Up Left"},
-            { "value": "fade-down-right", "label": "Fade Down Right"},
-            { "value": "fade-down-left", "label": "Fade Down Left"},
-            { "value": "flip-up", "label": "Flip Up"},
-            { "value": "flip-down", "label": "Flip Down"},
-            { "value": "flip-left", "label": "Flip Left"},
-            { "value": "flip-right", "label": "Flip Right"},
-            { "value": "slide-up", "label": "Slide Up"},
-            { "value": "slide-down", "label": "Slide Down"},
-            { "value": "slide-left", "label": "Slide Left"},
-            { "value": "slide-right", "label": "Slide Right"},
-            { "value": "zoom-in", "label": "Zoom In"},
-            { "value": "zoom-in-up", "label": "Zoom In Up"},
-            { "value": "zoom-in-down", "label": "Zoom In Down"},
-            { "value": "zoom-in-left", "label": "Zoom In Left"},
-            { "value": "zoom-in-right", "label": "Zoom In Right"},
-            { "value": "zoom-out", "label": "Zoom Out"},
-            { "value": "zoom-out-up", "label": "Zoom Out Up"},
-            { "value": "zoom-out-down", "label": "Zoom Out Down"},
-            { "value": "zoom-out-left", "label": "Zoom Out Feft"},
-            { "value": "zoom-out-right", "label": "Zoom Out Right"}
+            { "value": "slide-up", "label": "Slide Up"}
             ],
             "label": "Select Animation"
         },
@@ -138,29 +191,25 @@
             "type": "text",
             "id": "paddingsection",
             "label": "Padding Section",
-            "default": "0px 0px 0px 0px",
-            "info": "Padding: Top Right Bottom Left"
+            "default": "0px 0px 0px 0px"
         },
         {
             "type": "text",
             "id": "paddingmobile",
             "label": "Padding Section Mobile",
-            "default": "60px 0px 60px 0px",
-            "info": "Padding: Top Right Bottom Left"
+            "default": "60px 0px 60px 0px"
         },
         {
             "type": "text",
             "id": "marginsection",
             "label": "Margin Section",
-            "default": "0px 0px 0px 0px",
-            "info": "Margin: Top Right Bottom Left"
+            "default": "0px 0px 0px 0px"
         },
         {
             "type": "text",
             "id": "marginmobile",
             "label": "Margin Mobile",
-            "default": "0px 0px 0px 0px",
-            "info": "Margin: Top Right Bottom Left"
+            "default": "0px 0px 0px 0px"
         },
         {
             "type": "select",
@@ -168,122 +217,98 @@
             "label": "Full Width",
             "default": "container",
             "options": [
-            {
-                "value": "container",
-                "label": "Box"
-            },
-            {
-                "value": "container-fluid",
-                "label": "Container Fluid"
-            },
-            {
-                "value": "full",
-                "label": "Full"
-            }
+            { "value": "container", "label": "Box" },
+            { "value": "container-fluid", "label": "Container Fluid" },
+            { "value": "full", "label": "Full" }
             ]
         },
-            {
-                "type": "color",
-                "id":"bgsection",
-                "label":"Background color",
-                "default":"transparent"
-            },
-            {
-                "type": "image_picker",
-                "id":"bg_image",
-                "label":"Background image"
-            },
         {
-                "type": "header",
-                "content": "Text Heading"
-            },
-            {
-                "type": "image_picker",
-                "id": "image_header",
-                "label": "Image header"
-            },
-            {
-                "type": "text",
-                "id": "title_top",
-                "label": "Sub Title Top",
-                "default": "Sub Title Top"
-            },
-            {
-                "type": "text",
-                "id": "title",
-                "label": "Title",
-                "default": "Custom content"
-            },
-            {
-                "type": "textarea",
-                "id": "des",
-                "label": "HTML / Description"
-            },
-            {
-                "type": "select",
-                "id": "align-heading",
-                "label": "Align Heading",
-                "default": "center",
-                "options": [
-                    {
-                        "value": "center",
-                        "label": "Center"
-                    },
-                    {
-                        "value": "left",
-                        "label": "Left"
-                    },
-                    {
-                        "value": "right",
-                        "label": "Right"
-                    }
-                ]
-            },
-            {
-                "type":"header",
-                "content":"Settings Carousel"
-            },
-            {
+            "type": "color",
+            "id":"bgsection",
+            "label":"Background color",
+            "default":"transparent"
+        },
+        {
+            "type": "image_picker",
+            "id":"bg_image",
+            "label":"Background image"
+        },
+        {
+            "type": "header",
+            "content": "Text Heading"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_header",
+            "label": "Image header"
+        },
+        {
+            "type": "text",
+            "id": "title_top",
+            "label": "Sub Title Top",
+            "default": "Sub Title Top"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Custom content"
+        },
+        {
+            "type": "textarea",
+            "id": "des",
+            "label": "HTML / Description"
+        },
+        {
+            "type": "select",
+            "id": "align-heading",
+            "label": "Align Heading",
+            "default": "center",
+            "options": [
+                { "value": "center", "label": "Center" },
+                { "value": "left", "label": "Left" },
+                { "value": "right", "label": "Right" }
+            ]
+        },
+        {
+            "type":"header",
+            "content":"Settings Carousel"
+        },
+        {
             "type": "checkbox",
             "id": "arrows",
             "label": "Arrows",
             "default": true
-            },
-            {
+        },
+        {
             "type": "checkbox",
             "id": "draggable",
             "label": "Draggable",
             "default": true
-            },
-            {
+        },
+        {
             "type": "checkbox",
             "id": "dots",
             "label": "Dots",
             "default": true
-            },
-            {
+        },
+        {
             "type": "checkbox",
             "id": "infinite",
             "label": "Infinite",
             "default": true
-            },
-            {
+        },
+        {
             "type": "select",
             "id": "rows",
             "label": "Rows",
             "default": "1",
             "options": [
-                {
-                "value": "1",
-                "label": "1 row"
-                },
-                {
-                "value": "2",
-                "label": "2 rows"
-                }
+                { "value": "1", "label": "1 row" },
+                { "value": "2", "label": "2 rows" }
             ]
-            },
-            {
+        },
+        {
             "type": "range",
             "id": "show",
             "min": 2,
@@ -291,8 +316,8 @@
             "step": 1,
             "label": "Display items (Desktop)",
             "default": 3
-            },
-            {
+        },
+        {
             "type": "range",
             "id": "show_mobile",
             "min": 1,
@@ -300,8 +325,7 @@
             "step": 1,
             "label": "Display items (Mobile)",
             "default": 1
-            }
-
+        }
     ],
     "blocks": [
         {
@@ -374,17 +398,13 @@
         }
     ],
     "presets": [
-    {
-        "name": "List image",
-        "blocks": [
-            {
-                "type": "image_item"
-            },
-            {
-                "type": "image_item"
-            }
-        ]
-    }
-]
+        {
+            "name": "List image",
+            "blocks": [
+                { "type": "image_item" },
+                { "type": "image_item" }
+            ]
+        }
+    ]
 }
 {% endschema %}
