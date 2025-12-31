@@ -1,6 +1,4 @@
-<!-- featured-collections-1.liquid -->
 <style>
-  
   .customstyle{{ section.id }} .collection-card__image{
     border-radius:{{ section.settings.radius }}%;
     isolation: isolate;
@@ -87,19 +85,31 @@
         justify-content: center;
         align-items: center;
         padding: 0 !important;
-       
+        
         background-size: cover;
         background:url({{ block.settings.bg_title  | image_url: width: 1920 }}) center center no-repeat ;
       }
     {% endif %}
   {% endfor %}
+
+  /* Fix for slider flicker */
+  .collectionlist-slider:not(.slick-initialized) {
+    display: flex;
+    overflow: hidden;
+  }
 </style>
+
 <div class="customstyle{{ section.id }}"  data-aos="{{ section.settings.animation }}" >
 {%- render 'style-section' -%}
   <div class="{{ section.settings.setwidth }}">
     <div class="section-block">
       {%- render 'section-heading' -%}
       <div class="collectionlist-wrapper pt-0 pt-lg-0">
+        
+        {% comment %} 
+            UPDATED: Added data-slidestoshow-mobile attribute with liquid variable 
+            and removed automatic type init to use custom script
+        {% endcomment %}
         <div class="collectionlist-slider row" id="collection-list-{{ section.id }}"
             data-rows="{{ section.settings.rows }}"
             data-slidesToShow="{{ section.settings.show }}"
@@ -109,10 +119,7 @@
             data-draggable="{{ section.settings.draggable }}" 
             data-infinite="{{ section.settings.infinite }}" 
             data-section-id="{{ section.id }}" 
-            data-slidestoshow-mobile="1"
-            {% if section.settings.enable_carousel %}
-            data-section-type="slickCarousels"
-            {% endif %}
+            data-slidestoshow-mobile="{{ section.settings.show_mobile }}"
           >
           {%- for block in section.blocks -%}
           <div class="col collectionlist-item carousel__slide-wrapper--{{ block.id }}" {{ block.shopify_attributes }} >
@@ -131,6 +138,76 @@
   </div>
 </div>
 
+{% comment %} 
+  JAVASCRIPT FIX: Forces the slider to respect the mobile setting 
+{% endcomment %}
+{% if section.settings.enable_carousel %}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    function initCollectionSlick{{ section.id | replace: '-', '' }}() {
+        var $slider = $('#collection-list-{{ section.id }}');
+        
+        // Settings variables
+        var rows = $slider.data('rows');
+        var desktopShow = $slider.data('slidestoshow');
+        var mobileShow = $slider.data('slidestoshow-mobile'); // New Setting
+        var arrows = $slider.data('arrows');
+        var dots = $slider.data('dots');
+        var infinite = $slider.data('infinite');
+        var draggable = $slider.data('draggable');
+
+        // Check if slick is already initialized to avoid conflict
+        if ($slider.hasClass('slick-initialized')) {
+            $slider.slick('unslick');
+        }
+
+        // Initialize Slick
+        $slider.slick({
+            rows: rows,
+            slidesToShow: desktopShow,
+            slidesToScroll: desktopShow,
+            arrows: arrows,
+            dots: dots,
+            infinite: infinite,
+            draggable: draggable,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: desktopShow >= 3 ? 3 : desktopShow,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 767, /* Mobile Breakpoint */
+                    settings: {
+                        slidesToShow: mobileShow, /* Uses your new setting */
+                        slidesToScroll: 1,
+                        rows: 1 /* Force 1 row on mobile usually looks better */
+                    }
+                }
+            ]
+        });
+    }
+
+    // Initialize on load with timeout for jQuery
+    setTimeout(function(){
+        if (typeof $ !== 'undefined') {
+            initCollectionSlick{{ section.id | replace: '-', '' }}();
+        }
+    }, 100);
+
+    // Re-initialize on Theme Editor update
+    if (Shopify.designMode) {
+        document.addEventListener('shopify:section:load', function(event) {
+            if (event.detail.sectionId === '{{ section.id }}') {
+                initCollectionSlick{{ section.id | replace: '-', '' }}();
+            }
+        });
+    }
+});
+</script>
+{% endif %}
 
 {% schema %}
 {
@@ -142,118 +219,34 @@
       "type": "select",
       "id": "animation",
       "options": [
-        {
-          "value": "",
-          "label": "None"
-        },
-        {
-          "value": "fade",
-          "label": "Fade"
-        },
-        {
-          "value": "fade-up",
-          "label": "Fade Up"
-        },
-        {
-          "value": "fade-down",
-          "label": "Fade Down"
-        },
-        {
-          "value": "fade-left",
-          "label": "Fade Left"
-        },
-        {
-          "value": "fade-right",
-          "label": "Fade Right"
-        },
-        {
-          "value": "fade-up-right",
-          "label": "Fade Up Right"
-        },
-        {
-          "value": "fade-up-left",
-          "label": "Fade Up Left"
-        },
-        {
-          "value": "fade-down-right",
-          "label": "Fade Down Right"
-        },
-        {
-          "value": "fade-down-left",
-          "label": "Fade Down Left"
-        },
-        {
-          "value": "flip-up",
-          "label": "Flip Up"
-        },
-        {
-          "value": "flip-down",
-          "label": "Flip Down"
-        },
-        {
-          "value": "flip-left",
-          "label": "Flip Left"
-        },
-        {
-          "value": "flip-right",
-          "label": "Flip Right"
-        },
-        {
-          "value": "slide-up",
-          "label": "Slide Up"
-        },
-        {
-          "value": "slide-down",
-          "label": "Slide Down"
-        },
-        {
-          "value": "slide-left",
-          "label": "Slide Left"
-        },
-        {
-          "value": "slide-right",
-          "label": "Slide Right"
-        },
-        {
-          "value": "zoom-in",
-          "label": "Zoom In"
-        },
-        {
-          "value": "zoom-in-up",
-          "label": "Zoom In Up"
-        },
-        {
-          "value": "zoom-in-down",
-          "label": "Zoom In Down"
-        },
-        {
-          "value": "zoom-in-left",
-          "label": "Zoom In Left"
-        },
-        {
-          "value": "zoom-in-right",
-          "label": "Zoom In Right"
-        },
-        {
-          "value": "zoom-out",
-          "label": "Zoom Out"
-        },
-        {
-          "value": "zoom-out-up",
-          "label": "Zoom Out Up"
-        },
-        {
-          "value": "zoom-out-down",
-          "label": "Zoom Out Down"
-        },
-        {
-          "value": "zoom-out-left",
-          "label": "Zoom Out Feft"
-        },
-        {
-          "value": "zoom-out-right",
-          "label": "Zoom Out Right"
-        }
+        { "value": "", "label": "None" },
+        { "value": "fade", "label": "Fade" },
+        { "value": "fade-up", "label": "Fade Up" },
+        { "value": "fade-down", "label": "Fade Down" },
+        { "value": "fade-left", "label": "Fade Left" },
+        { "value": "fade-right", "label": "Fade Right" },
+        { "value": "fade-up-right", "label": "Fade Up Right" },
+        { "value": "fade-up-left", "label": "Fade Up Left" },
+        { "value": "fade-down-right", "label": "Fade Down Right" },
+        { "value": "fade-down-left", "label": "Fade Down Left" },
+        { "value": "flip-up", "label": "Flip Up" },
+        { "value": "flip-down", "label": "Flip Down" },
+        { "value": "flip-left", "label": "Flip Left" },
+        { "value": "flip-right", "label": "Flip Right" },
+        { "value": "slide-up", "label": "Slide Up" },
+        { "value": "slide-down", "label": "Slide Down" },
+        { "value": "slide-left", "label": "Slide Left" },
+        { "value": "slide-right", "label": "Slide Right" },
+        { "value": "zoom-in", "label": "Zoom In" },
+        { "value": "zoom-in-up", "label": "Zoom In Up" },
+        { "value": "zoom-in-down", "label": "Zoom In Down" },
+        { "value": "zoom-in-left", "label": "Zoom In Left" },
+        { "value": "zoom-in-right", "label": "Zoom In Right" },
+        { "value": "zoom-out", "label": "Zoom Out" },
+        { "value": "zoom-out-up", "label": "Zoom Out Up" },
+        { "value": "zoom-out-down", "label": "Zoom Out Down" },
+        { "value": "zoom-out-left", "label": "Zoom Out Feft" },
+        { "value": "zoom-out-right", "label": "Zoom Out Right" }
       ],
       "label": "Select Animation"
     },
@@ -263,18 +256,9 @@
       "label": "Full Width",
       "default": "container",
       "options": [
-        {
-          "value": "container",
-          "label": "Box"
-        },
-        {
-          "value": "container-fluid",
-          "label": "Container Fluid"
-        },
-        {
-          "value": "full",
-          "label": "Full"
-        }
+        { "value": "container", "label": "Box" },
+        { "value": "container-fluid", "label": "Container Fluid" },
+        { "value": "full", "label": "Full" }
       ]
     },
     {
@@ -289,10 +273,10 @@
       "default": "#ffffff"
     },
     {
-            "type": "image_picker",
-            "id": "image_header",
-            "label": "Image header"
-        },
+      "type": "image_picker",
+      "id": "image_header",
+      "label": "Image header"
+    },
     {
       "type": "text",
       "id": "title_top",
@@ -316,18 +300,9 @@
       "label": "Align Heading",
       "default": "center",
       "options": [
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
+        { "value": "center", "label": "Center" },
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
       ]
     },
     {
@@ -336,26 +311,11 @@
       "label": "Size Image",
       "default": "auto",
       "options": [
-        {
-          "value": "auto",
-          "label": "Natural"
-        },
-        {
-          "value": "square",
-          "label": "Square (1:1)"
-        },
-        {
-          "value": "landscape",
-          "label": "Landscape (4:3)"
-        },
-        {
-          "value": "portrait",
-          "label": "Portrait (2:3)"
-        },
-        {
-          "value": "wide",
-          "label": "Wide (16:9)"
-        }
+        { "value": "auto", "label": "Natural" },
+        { "value": "square", "label": "Square (1:1)" },
+        { "value": "landscape", "label": "Landscape (4:3)" },
+        { "value": "portrait", "label": "Portrait (2:3)" },
+        { "value": "wide", "label": "Wide (16:9)" }
       ]
     },
     {
@@ -364,14 +324,8 @@
       "label": "Text index",
       "default": "bottom",
       "options": [
-        {
-          "value": "bottom",
-          "label": "Bottom"
-        },
-        {
-          "value": "top",
-          "label": "Top"
-        }
+        { "value": "bottom", "label": "Bottom" },
+        { "value": "top", "label": "Top" }
       ]
     },
     {
@@ -380,14 +334,8 @@
       "label": "Rows",
       "default": "1",
       "options": [
-        {
-          "value": "1",
-          "label": "1 row"
-        },
-        {
-          "value": "2",
-          "label": "2 rows"
-        }
+        { "value": "1", "label": "1 row" },
+        { "value": "2", "label": "2 rows" }
       ]
     },
     {
@@ -396,8 +344,17 @@
       "min": 2,
       "max": 6,
       "step": 1,
-      "label": "Display items",
+      "label": "Display items (Desktop)",
       "default": 3
+    },
+    {
+      "type": "range",
+      "id": "show_mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Display items (Mobile)",
+      "default": 1
     },
     {
       "type": "range",
@@ -420,37 +377,19 @@
       "default": 15
     },
     {
-          "type": "select",
-          "id": "size_text",
-          "default": "h4",
-          "options": [
-            {
-              "value": "h1",
-              "label": "H1"
-            },
-            {
-              "value": "h2",
-              "label": "H2"
-            },
-            {
-              "value": "h3",
-              "label": "H3"
-            },
-            {
-              "value": "h4",
-              "label": "H4"
-            },
-            {
-              "value": "h5",
-              "label": "H5"
-            },
-            {
-              "value": "h6",
-              "label": "H6"
-            }
-          ],
-          "label": "Name Collection Size"
-        },
+      "type": "select",
+      "id": "size_text",
+      "default": "h4",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" },
+        { "value": "h4", "label": "H4" },
+        { "value": "h5", "label": "H5" },
+        { "value": "h6", "label": "H6" }
+      ],
+      "label": "Name Collection Size"
+    },
     {
       "type": "checkbox",
       "id": "show_count",
@@ -563,15 +502,9 @@
       "name": "Collection list",
       "category": "Collection",
       "blocks": [
-        {
-          "type": "collection"
-        },
-        {
-          "type": "collection"
-        },
-        {
-          "type": "collection"
-        }
+        { "type": "collection" },
+        { "type": "collection" },
+        { "type": "collection" }
       ]
     }
   ]
