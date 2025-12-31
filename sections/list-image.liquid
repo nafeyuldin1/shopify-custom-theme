@@ -10,9 +10,14 @@
     <div class="{{ section.settings.setwidth }}">
         <div class="list-image">
             {%- render 'section-heading' -%}
+            
+            {% comment %} 
+              Updated: Added data-mobile attribute to pass mobile setting to JS 
+            {% endcomment %}
             <div class="list-image-content" id="list-image-{{ section.id }}"
             data-rows="{{ section.settings.rows }}"
             data-slidesToShow="{{ section.settings.show }}"
+            data-mobile="{{ section.settings.show_mobile }}" 
             data-slidestoscroll="{{ section.settings.show }}"
             data-arrows="{{ section.settings.arrows }}"
             data-dots="{{ section.settings.dots }}" 
@@ -284,8 +289,17 @@
             "min": 2,
             "max": 6,
             "step": 1,
-            "label": "Display items",
+            "label": "Display items (Desktop)",
             "default": 3
+            },
+            {
+            "type": "range",
+            "id": "show_mobile",
+            "min": 1,
+            "max": 3,
+            "step": 1,
+            "label": "Display items (Mobile)",
+            "default": 1
             }
 
     ],
