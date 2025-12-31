@@ -116,7 +116,7 @@
         "style_item": "top",
         "rows": "1",
         "show": 2,
-        "show_mobile": 1,
+        "show_mobile": 3,
         "radius": 0,
         "space": 15,
         "size_text": "h4",
