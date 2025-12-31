@@ -378,7 +378,7 @@
         "marginsection": "0px 0px 0px 0px",
         "marginmobile": "0px 0px 0px 0px",
         "setwidth": "container",
-        "bgsection": "transparent",
+        "bgsection": "rgba(0,0,0,0)",
         "title_top": "",
         "title": "SHOP BY MEN'S SIZE",
         "des": "",
@@ -492,7 +492,7 @@
         "marginsection": "0px 0px 0px 0px",
         "marginmobile": "0px 0px 0px 0px",
         "setwidth": "container",
-        "bgsection": "transparent",
+        "bgsection": "rgba(0,0,0,0)",
         "title_top": "",
         "title": "SHOP BY WOMEN'S SIZE",
         "des": "",
@@ -511,9 +511,9 @@
     "featured_collections_1_dAx3cd",
     "parallax_banner_3zmRTM",
     "07954675-bad5-4a16-8ffa-2392279b713d",
-    "faq_accordion_k3iLMJ",
-    "collection_carousel_NwM4J4",
     "list_image_yGJEzC",
-    "list_image_DiGgMF"
+    "list_image_DiGgMF",
+    "faq_accordion_k3iLMJ",
+    "collection_carousel_NwM4J4"
   ]
 }
