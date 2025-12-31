@@ -706,11 +706,7 @@
           "image_VJcwRY",
           "image_9QnCNb"
         ],
-        "custom_css": [
-          ".container-fluid {max-width: 1250px; height: auto;}",
-          "@media screen and (max-width: 750px) {.slideshow__text-wrap--desktop .slideshow__text-content {top: 35%; }}",
-          ".slideshow__btn-wrapper .btn2:hover {background: black !important; color: white;}"
-        ],
+        "custom_css": [],
         "settings": {
           "enable_slideshow": true,
           "setwidthout": "full",
@@ -2262,7 +2258,7 @@
         "custom_css": [
           ".search-modal.modal__content {background: white;}",
           ".js-wishlist-count.js-wishlist-indicator {color: black;}",
-          "@media screen and (max-width: 750px){.modal__toggle-search-mobile{display: none; }}"
+          "@media screen and (max-width: 750px) {.modal__toggle-search-mobile {display: none; }}"
         ],
         "settings": {
           "logo": "shopify://shop_images/WhatsApp_Image_2025-10-24_at_1.35.34_AM_1-removebg-preview.png",
