@@ -199,84 +199,6 @@
         "marginmobile": "0px 0px 0px 0px"
       }
     },
-    "faq_accordion_k3iLMJ": {
-      "type": "faq-accordion",
-      "blocks": {
-        "faq_nqcknn": {
-          "type": "faq",
-          "settings": {
-            "faq_title": "Are all shoes at ThriftUp original and authentic?",
-            "faq_des": "<p>Yes! Every pair of shoes at ThriftUp is carefully verified for authenticity and quality before being listed for sale. We only sell genuine, high-quality footwear.</p>"
-          }
-        },
-        "faq_PTEXYK": {
-          "type": "faq",
-          "settings": {
-            "faq_title": "Do you sell new or pre-loved (used) shoes?",
-            "faq_des": "<p>ThriftUp offers both <strong>new and gently used shoes</strong>. Each item’s condition is clearly mentioned in the product details so you know exactly what you’re getting.</p>"
-          }
-        },
-        "faq_TfJDXR": {
-          "type": "faq",
-          "settings": {
-            "faq_title": "What shoe sizes are available at ThriftUp?",
-            "faq_des": "<p>We stock a wide range of sizes for men, women, and kids. Availability may vary depending on the style, so be sure to check the size options on each product page.</p>"
-          }
-        },
-        "faq_y8nryY": {
-          "type": "faq",
-          "settings": {
-            "faq_title": "Can I return or exchange a pair if it doesn’t fit?",
-            "faq_des": "<p>Yes, ThriftUp offers <strong>easy returns and exchanges</strong> within a specified time frame. Just make sure the shoes are unworn and in their original condition when returning.</p>"
-          }
-        },
-        "faq_KXiJic": {
-          "type": "faq",
-          "settings": {
-            "faq_title": "How can I be sure the shoes I see online match what I’ll receive?",
-            "faq_des": "<p> All photos on ThriftUp are <strong>real images</strong> of the actual products — no stock photos. What you see is exactly what you’ll get!</p>"
-          }
-        }
-      },
-      "block_order": [
-        "faq_nqcknn",
-        "faq_PTEXYK",
-        "faq_TfJDXR",
-        "faq_y8nryY",
-        "faq_KXiJic"
-      ],
-      "custom_css": [
-        "h4 span {text-transform: capitalize !important;}"
-      ],
-      "name": "Faqs Accordion",
-      "settings": {
-        "animation": "",
-        "setwidth": "container",
-        "bgsection": "#ffffff",
-        "e_size": "auto",
-        "e_repeat": "no-repeat",
-        "e_pos": "center center",
-        "title_top": "FAQs",
-        "title": "Frequently Asked Questions",
-        "des": "",
-        "align-heading": "center",
-        "title_size": "h4",
-        "e_first_open": false,
-        "e_reverse": true,
-        "e_small": true,
-        "left_html": "",
-        "e_right": false,
-        "paddingsection": "0px 0px 0px 0px",
-        "paddingmobile": "40px 0px 40px 0px",
-        "marginsection": "0px 0px 50px 0px",
-        "marginmobile": "0px 0px 0px 0px"
-      }
-    },
-    "collection_carousel_NwM4J4": {
-      "type": "collection-carousel",
-      "name": "Collections Carousel",
-      "settings": {}
-    },
     "list_image_yGJEzC": {
       "type": "list-image",
       "blocks": {
@@ -388,7 +310,8 @@
         "dots": true,
         "infinite": true,
         "rows": "1",
-        "show": 6
+        "show": 6,
+        "show_mobile": 2
       }
     },
     "list_image_DiGgMF": {
@@ -502,8 +425,87 @@
         "dots": true,
         "infinite": true,
         "rows": "1",
-        "show": 6
+        "show": 6,
+        "show_mobile": 2
       }
+    },
+    "faq_accordion_k3iLMJ": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faq_nqcknn": {
+          "type": "faq",
+          "settings": {
+            "faq_title": "Are all shoes at ThriftUp original and authentic?",
+            "faq_des": "<p>Yes! Every pair of shoes at ThriftUp is carefully verified for authenticity and quality before being listed for sale. We only sell genuine, high-quality footwear.</p>"
+          }
+        },
+        "faq_PTEXYK": {
+          "type": "faq",
+          "settings": {
+            "faq_title": "Do you sell new or pre-loved (used) shoes?",
+            "faq_des": "<p>ThriftUp offers both <strong>new and gently used shoes</strong>. Each item’s condition is clearly mentioned in the product details so you know exactly what you’re getting.</p>"
+          }
+        },
+        "faq_TfJDXR": {
+          "type": "faq",
+          "settings": {
+            "faq_title": "What shoe sizes are available at ThriftUp?",
+            "faq_des": "<p>We stock a wide range of sizes for men, women, and kids. Availability may vary depending on the style, so be sure to check the size options on each product page.</p>"
+          }
+        },
+        "faq_y8nryY": {
+          "type": "faq",
+          "settings": {
+            "faq_title": "Can I return or exchange a pair if it doesn’t fit?",
+            "faq_des": "<p>Yes, ThriftUp offers <strong>easy returns and exchanges</strong> within a specified time frame. Just make sure the shoes are unworn and in their original condition when returning.</p>"
+          }
+        },
+        "faq_KXiJic": {
+          "type": "faq",
+          "settings": {
+            "faq_title": "How can I be sure the shoes I see online match what I’ll receive?",
+            "faq_des": "<p> All photos on ThriftUp are <strong>real images</strong> of the actual products — no stock photos. What you see is exactly what you’ll get!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_nqcknn",
+        "faq_PTEXYK",
+        "faq_TfJDXR",
+        "faq_y8nryY",
+        "faq_KXiJic"
+      ],
+      "custom_css": [
+        "h4 span {text-transform: capitalize !important;}"
+      ],
+      "name": "Faqs Accordion",
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "e_size": "auto",
+        "e_repeat": "no-repeat",
+        "e_pos": "center center",
+        "title_top": "FAQs",
+        "title": "Frequently Asked Questions",
+        "des": "",
+        "align-heading": "center",
+        "title_size": "h4",
+        "e_first_open": false,
+        "e_reverse": true,
+        "e_small": true,
+        "left_html": "",
+        "e_right": false,
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 50px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "collection_carousel_NwM4J4": {
+      "type": "collection-carousel",
+      "name": "Collections Carousel",
+      "settings": {}
     }
   },
   "order": [
