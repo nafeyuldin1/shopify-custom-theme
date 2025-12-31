@@ -2,6 +2,7 @@
   .customstyle{{ section.id }} .collection-card__image{
     border-radius:{{ section.settings.radius }}%;
     isolation: isolate;
+    width: 100%; /* Ensure image fits container */
   }
   .customstyle{{ section.id }} .slick-dots{
     margin-top: 30px;
@@ -11,63 +12,72 @@
     display: none;
   }
   {% endunless  %}
-  {% if section.settings.style_item == "top" %}
-  .customstyle{{ section.id }}{
-    --g-cta-text:#fff;
-  }
+  
+  /* Fix for text alignment */
   .customstyle{{ section.id }} .collection-card-1-infor{
-    padding: 10%;
     width: 100%;
     text-align: center;
   }
-  .customstyle{{ section.id }} .collection-card-1-infor h4{
-    padding-top: 0px !important;
+  
+  /* Spacing fix because we removed 'row' class */
+  .customstyle{{ section.id }} .collectionlist-item {
+      padding: 0 10px; /* Gap between items */
+      margin-bottom: 20px;
   }
-  .customstyle{{ section.id }} .collection-card-1-infor h4,
-  .customstyle{{ section.id }} .collection-card-1-infor p{
-    /* color: #fff; */
-  }
-  .customstyle{{ section.id }} .button-collection-grid{
-    transform: translateY(80px);
-    height: 0;
-    opacity: 1;
-    -ms-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -webkit-transition: all .3s ease;
-    transition: all .3s ease;
-  }
-  .customstyle{{ section.id }} .collection-card-1:hover .button-collection-grid{
-    opacity: 1;
-    -ms-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -webkit-transition: all .5s ease;
-    transition: all .5s ease;
-    transform: translateY(0);
-    height: 50px;
-    margin-top: 20px;
-  }
-  @media (min-width:1200px) {
-    .customstyle{{ section.id }} .collection-card-1-infor h4{
-      font-size: 22px;
-    }
-  }
-  {% else %}
-  .customstyle{{ section.id }} .collectionlist-item:hover h4{
-    color: var(--g-main);
-  }
-  {% endif %}
-  {% if section.settings.rows == "2" %}
-  .customstyle{{ section.id }} .collectionlist-item{
-    margin-bottom: 30px;
-  }
-  {% endif %}
-  @media(min-width:750px){
+
+  /* Style Item Top Logic */
+  {% if section.settings.style_item == "top" %}
     .customstyle{{ section.id }}{
-      --g-hgutter:{{ section.settings.space }}px;
+        --g-cta-text:#fff;
     }
+    .customstyle{{ section.id }} .collection-card-1-infor{
+        padding: 10%;
+    }
+    .customstyle{{ section.id }} .button-collection-grid{
+        transform: translateY(80px);
+        height: 0;
+        opacity: 1;
+        transition: all .3s ease;
+    }
+    .customstyle{{ section.id }} .collection-card-1:hover .button-collection-grid{
+        opacity: 1;
+        transition: all .5s ease;
+        transform: translateY(0);
+        height: 50px;
+        margin-top: 20px;
+    }
+    @media (min-width:1200px) {
+        .customstyle{{ section.id }} .collection-card-1-infor h4{
+        font-size: 22px;
+        }
+    }
+  {% else %}
+    .customstyle{{ section.id }} .collectionlist-item:hover h4{
+        color: var(--g-main);
+    }
+  {% endif %}
+
+  /* Container Width Fix */
+  .customstyle{{ section.id }} .collectionlist-wrapper {
+      overflow: hidden; /* Prevents horizontal scrollbar */
   }
+  
+  /* Slider Initialization Fix */
+  .collectionlist-slider:not(.slick-initialized) {
+    display: flex;
+    overflow-x: hidden;
+  }
+  .collectionlist-slider:not(.slick-initialized) .collectionlist-item {
+     flex: 0 0 auto; 
+     width: calc(100% / {{ section.settings.show }});
+  }
+  /* Mobile fallback pre-load */
+  @media (max-width: 767px) {
+      .collectionlist-slider:not(.slick-initialized) .collectionlist-item {
+          width: calc(100% / {{ section.settings.show_mobile }});
+      }
+  }
+
   {%- for block in section.blocks -%}
     {% if block.settings.bg_title != blank  %}
     .carousel__slide-wrapper--{{ block.id }} .collection-card-1-infor{
@@ -76,8 +86,6 @@
       .carousel__slide-wrapper--{{ block.id }} .collection-card-1-infor h4{
         display: block;
         position: relative;
-      }
-      .carousel__slide-wrapper--{{ block.id }} .collection-card-1-infor h4{
         width: 250px;
         max-width: 100%;
         height: 60px;
@@ -85,18 +93,11 @@
         justify-content: center;
         align-items: center;
         padding: 0 !important;
-        
         background-size: cover;
         background:url({{ block.settings.bg_title  | image_url: width: 1920 }}) center center no-repeat ;
       }
     {% endif %}
   {% endfor %}
-
-  /* Fix for slider flicker */
-  .collectionlist-slider:not(.slick-initialized) {
-    display: flex;
-    overflow: hidden;
-  }
 </style>
 
 <div class="customstyle{{ section.id }}"  data-aos="{{ section.settings.animation }}" >
@@ -107,10 +108,9 @@
       <div class="collectionlist-wrapper pt-0 pt-lg-0">
         
         {% comment %} 
-            UPDATED: Added data-slidestoshow-mobile attribute with liquid variable 
-            and removed automatic type init to use custom script
+            UPDATED: Removed 'row' class to prevent bootstrap conflict 
         {% endcomment %}
-        <div class="collectionlist-slider row" id="collection-list-{{ section.id }}"
+        <div class="collectionlist-slider" id="collection-list-{{ section.id }}"
             data-rows="{{ section.settings.rows }}"
             data-slidesToShow="{{ section.settings.show }}"
             data-slidestoscroll="{{ section.settings.show }}"
@@ -122,7 +122,11 @@
             data-slidestoshow-mobile="{{ section.settings.show_mobile }}"
           >
           {%- for block in section.blocks -%}
-          <div class="col collectionlist-item carousel__slide-wrapper--{{ block.id }}" {{ block.shopify_attributes }} >
+          
+          {% comment %} 
+            UPDATED: Removed 'col' class. Now Slick Slider handles the width 
+          {% endcomment %}
+          <div class="collectionlist-item carousel__slide-wrapper--{{ block.id }}" {{ block.shopify_attributes }} >
             {%- assign featured_collection = collections[block.settings.collection] -%}
             {%- assign featured_image = block.settings.image -%}
             {%- assign icon_image = block.settings.icon -%}
@@ -139,7 +143,7 @@
 </div>
 
 {% comment %} 
-  JAVASCRIPT FIX: Forces the slider to respect the mobile setting 
+  JAVASCRIPT: Forces slider to respect mobile setting and reload correctly
 {% endcomment %}
 {% if section.settings.enable_carousel %}
 <script>
@@ -147,10 +151,12 @@ document.addEventListener("DOMContentLoaded", function() {
     function initCollectionSlick{{ section.id | replace: '-', '' }}() {
         var $slider = $('#collection-list-{{ section.id }}');
         
+        if ($slider.length === 0) return;
+
         // Settings variables
         var rows = $slider.data('rows');
         var desktopShow = $slider.data('slidestoshow');
-        var mobileShow = $slider.data('slidestoshow-mobile'); // New Setting
+        var mobileShow = $slider.data('slidestoshow-mobile'); // Using the new mobile setting
         var arrows = $slider.data('arrows');
         var dots = $slider.data('dots');
         var infinite = $slider.data('infinite');
@@ -181,16 +187,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 {
                     breakpoint: 767, /* Mobile Breakpoint */
                     settings: {
-                        slidesToShow: mobileShow, /* Uses your new setting */
+                        slidesToShow: mobileShow, /* This will now enforce 2 items */
                         slidesToScroll: 1,
-                        rows: 1 /* Force 1 row on mobile usually looks better */
+                        rows: 1 /* Force 1 row logic on mobile to prevent stacking */
                     }
                 }
             ]
         });
     }
 
-    // Initialize on load with timeout for jQuery
+    // Initialize on load
     setTimeout(function(){
         if (typeof $ !== 'undefined') {
             initCollectionSlick{{ section.id | replace: '-', '' }}();
@@ -221,32 +227,7 @@ document.addEventListener("DOMContentLoaded", function() {
       "options": [
         { "value": "", "label": "None" },
         { "value": "fade", "label": "Fade" },
-        { "value": "fade-up", "label": "Fade Up" },
-        { "value": "fade-down", "label": "Fade Down" },
-        { "value": "fade-left", "label": "Fade Left" },
-        { "value": "fade-right", "label": "Fade Right" },
-        { "value": "fade-up-right", "label": "Fade Up Right" },
-        { "value": "fade-up-left", "label": "Fade Up Left" },
-        { "value": "fade-down-right", "label": "Fade Down Right" },
-        { "value": "fade-down-left", "label": "Fade Down Left" },
-        { "value": "flip-up", "label": "Flip Up" },
-        { "value": "flip-down", "label": "Flip Down" },
-        { "value": "flip-left", "label": "Flip Left" },
-        { "value": "flip-right", "label": "Flip Right" },
-        { "value": "slide-up", "label": "Slide Up" },
-        { "value": "slide-down", "label": "Slide Down" },
-        { "value": "slide-left", "label": "Slide Left" },
-        { "value": "slide-right", "label": "Slide Right" },
-        { "value": "zoom-in", "label": "Zoom In" },
-        { "value": "zoom-in-up", "label": "Zoom In Up" },
-        { "value": "zoom-in-down", "label": "Zoom In Down" },
-        { "value": "zoom-in-left", "label": "Zoom In Left" },
-        { "value": "zoom-in-right", "label": "Zoom In Right" },
-        { "value": "zoom-out", "label": "Zoom Out" },
-        { "value": "zoom-out-up", "label": "Zoom Out Up" },
-        { "value": "zoom-out-down", "label": "Zoom Out Down" },
-        { "value": "zoom-out-left", "label": "Zoom Out Feft" },
-        { "value": "zoom-out-right", "label": "Zoom Out Right" }
+        { "value": "slide-up", "label": "Slide Up" }
       ],
       "label": "Select Animation"
     },
@@ -440,15 +421,13 @@ document.addEventListener("DOMContentLoaded", function() {
       "type": "text",
       "id": "paddingsection",
       "label": "Padding Section",
-      "default": "0px 0px 0px 0px",
-      "info": "Padding: Top Right Bottom Left"
+      "default": "0px 0px 0px 0px"
     },
     {
       "type": "text",
       "id": "paddingmobile",
       "label": "Padding Section Mobile",
-      "default": "40px 0px 40px 0px",
-      "info": "Padding: Top Right Bottom Left"
+      "default": "40px 0px 40px 0px"
     },
     {
       "type": "header",
@@ -458,15 +437,13 @@ document.addEventListener("DOMContentLoaded", function() {
       "type": "text",
       "id": "marginsection",
       "label": "Margin Section",
-      "default": "0px 0px 0px 0px",
-      "info": "Margin: Top Right Bottom Left"
+      "default": "0px 0px 0px 0px"
     },
     {
       "type": "text",
       "id": "marginmobile",
       "label": "Margin Mobile",
-      "default": "0px 0px 0px 0px",
-      "info": "Margin: Top Right Bottom Left"
+      "default": "0px 0px 0px 0px"
     }
   ],
   "blocks": [
