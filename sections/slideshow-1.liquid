@@ -2,6 +2,19 @@
 {%- liquid 
   assign rotate = section.settings.autorotate
   assign dot = section.settings.slide_dot
+  
+  # --- FIX START: Calculate Mobile Aspect Ratio ---
+  assign mobile_height = section.settings.slideshow_height_mobile
+  assign mobile_aspect_ratio = 1.77
+  if mobile_height == 'adapt'
+    assign first_block = section.blocks[0]
+    if first_block.settings.image_mobile != blank
+      assign mobile_aspect_ratio = first_block.settings.image_mobile.aspect_ratio
+    elsif first_block.settings.image != blank
+      assign mobile_aspect_ratio = first_block.settings.image.aspect_ratio
+    endif
+  endif
+  # --- FIX END ---
 -%} 
 <style>
 .slideshow .slick-dots li button::before{
@@ -83,6 +96,28 @@
   .mobile--slideshow-full{
     height: 100vh !important;
   }
+  
+  /* --- FIX START: New CSS Class for Adapt Height on Mobile --- */
+  .mobile--slideshow-adapt {
+    height: auto !important;
+    /* Uses Padding Hack based on Aspect Ratio */
+    padding-bottom: {{ 100 | divided_by: mobile_aspect_ratio }}% !important; 
+    position: relative;
+  }
+  .mobile--slideshow-adapt .slick-list, 
+  .mobile--slideshow-adapt .slick-track,
+  .mobile--slideshow-adapt .slideshow__slide {
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .mobile--slideshow-adapt .img_mobile {
+     height: 100% !important;
+  }
+  /* --- FIX END --- */
+
   .img_mobile{
     height: 100%;
   }
@@ -666,18 +701,18 @@ html:not(.no-js) .slideshow.slick-initialized .slideshow__slide{
     {% comment %}  {% endcomment %}
     <div class="slide-main-content">
       <div class="transit-{{ section.settings.anim_slideshow }} dot-{{ section.settings.slide_dot }} slideshow {% unless section.settings.slideshow_height_adapt == 'adapt' %} slideshow--desktop-{{ section.settings.slideshow_height_adapt }} {% endunless %} mobile--slideshow-{{ section.settings.slideshow_height_mobile }} "
-          id="Slideshow-{{ section.id }}"
-          data-arrow="{{ section.settings.e_arrow }}"
-          data-dot="{{ section.settings.e_dot }}"
-          data-autorotate="{{ section.settings.autorotate }}"
-          data-speed="{{ section.settings.autorotate_speed | times: 1000 }}"
-          data-adapt-height="{%- if section.settings.slideshow_height_adapt == 'adapt' -%}true{%- else -%}false{%- endif -%}"
-          data-slide-nav-a11y="{{ 'sections.slideshow.load_slide' | t: slide_number: '[slide_number]' }}"
-          data-transit="{{ section.settings.anim_slideshow }}"
-          {%- if section.settings.slideshow_height_adapt == 'adapt' -%}
-          data-min-aspect-ratio="{{ min_aspect_ratio }}"
-          style="aspect-ratio: {{ min_aspect_ratio }}; height: auto;"
-          {%- endif -%}>
+           id="Slideshow-{{ section.id }}"
+           data-arrow="{{ section.settings.e_arrow }}"
+           data-dot="{{ section.settings.e_dot }}"
+           data-autorotate="{{ section.settings.autorotate }}"
+           data-speed="{{ section.settings.autorotate_speed | times: 1000 }}"
+           data-adapt-height="{%- if section.settings.slideshow_height_adapt == 'adapt' -%}true{%- else -%}false{%- endif -%}"
+           data-slide-nav-a11y="{{ 'sections.slideshow.load_slide' | t: slide_number: '[slide_number]' }}"
+           data-transit="{{ section.settings.anim_slideshow }}"
+           {%- if section.settings.slideshow_height_adapt == 'adapt' -%}
+           data-min-aspect-ratio="{{ min_aspect_ratio }}"
+           style="aspect-ratio: {{ min_aspect_ratio }}; height: auto;"
+           {%- endif -%}>
 
         {%- for block in section.blocks -%}
         {%- case block.type -%}
