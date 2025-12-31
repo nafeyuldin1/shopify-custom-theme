@@ -84,28 +84,35 @@
     height: 100vh !important;
   }
   
-  /* --- FIX START: CRITICAL CSS FOR FULL IMAGE --- */
+  /* --- FIX START: REMOVE ASPECT RATIO & FULL VIEW --- */
   .mobile--slideshow-adapt {
     height: auto !important;
-    min-height: 100px; /* Prevent collapse */
+    aspect-ratio: auto !important; /* Ye line aspect ratio khatam karegi */
+    min-height: 100px; 
     padding-bottom: 0 !important;
   }
   .mobile--slideshow-adapt .slick-list,
   .mobile--slideshow-adapt .slick-track {
     height: auto !important;
+    aspect-ratio: auto !important;
   }
   .mobile--slideshow-adapt .slideshow__slide {
     height: auto !important;
     display: block;
   }
-  /* Ensure the image takes full width and natural height */
+  /* Image settings for Full View */
+  .mobile--slideshow-adapt .img_mobile_adapt {
+    width: 100%;
+    display: block;
+    line-height: 0; /* Removes bottom space */
+  }
   .mobile--slideshow-adapt .img_mobile_adapt img {
     width: 100%;
     height: auto !important;
     display: block;
     object-fit: contain; 
   }
-  /* Remove absolute positioning for adapt mode so container grows */
+  /* Remove absolute positioning for adapt mode */
   .mobile--slideshow-adapt .slideshow__image {
      position: relative !important;
      height: auto !important;
@@ -763,7 +770,6 @@ html:not(.no-js) .slideshow.slick-initialized .slideshow__slide{
           {%- assign image_mb = block.settings.image_mobile -%}
           
             {%- if section.settings.slideshow_height_mobile == 'adapt' -%}
-                {% comment %} Render simple image tag for adapt mode so it forces container height {% endcomment %}
                 <div class="img_mobile_adapt d-lg-none">
                 <img class="lazyload"
                     data-src="{{ image_mb | image_url: width: 750 }}"
