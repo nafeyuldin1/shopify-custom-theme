@@ -1,9 +1,50 @@
 <style>
+  /* Base Image Style */
   .customstyle{{ section.id }} .collection-card__image{
     border-radius:{{ section.settings.radius }}%;
     isolation: isolate;
-    width: 100%; /* Ensure image fits container */
+    width: 100%;
+    height: auto;
+    display: block;
   }
+  
+  /* Fix for Slider flicker and Layout */
+  .customstyle{{ section.id }} .collectionlist-wrapper {
+      overflow: hidden;
+  }
+
+  /* Force Flex Layout for Slider Container */
+  .collectionlist-slider {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px; /* Negative margin to counter padding */
+  }
+
+  /* Item Styles */
+  .customstyle{{ section.id }} .collectionlist-item {
+      padding: 0 10px; /* Gaps */
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      flex: 0 0 auto; /* Prevent flexing weirdly */
+  }
+
+  /* DESKTOP WIDTH (Default) */
+  .customstyle{{ section.id }} .collectionlist-item {
+     width: calc(100% / {{ section.settings.show }});
+  }
+
+  /* MOBILE WIDTH - Strict Override */
+  @media (max-width: 767px) {
+      .customstyle{{ section.id }} .collectionlist-item {
+          width: calc(100% / {{ section.settings.show_mobile }}) !important;
+          max-width: calc(100% / {{ section.settings.show_mobile }}) !important;
+      }
+      /* Ensure text container fits */
+      .carousel__slide-wrapper--{{ block.id }} .collection-card-1-infor h4 {
+          width: 100% !important; /* Remove fixed width constraint */
+      }
+  }
+
   .customstyle{{ section.id }} .slick-dots{
     margin-top: 30px;
   }
@@ -12,20 +53,13 @@
     display: none;
   }
   {% endunless  %}
-  
-  /* Fix for text alignment */
+
+  /* TEXT OVERLAY STYLES */
   .customstyle{{ section.id }} .collection-card-1-infor{
     width: 100%;
     text-align: center;
   }
   
-  /* Spacing fix because we removed 'row' class */
-  .customstyle{{ section.id }} .collectionlist-item {
-      padding: 0 10px; /* Gap between items */
-      margin-bottom: 20px;
-  }
-
-  /* Style Item Top Logic */
   {% if section.settings.style_item == "top" %}
     .customstyle{{ section.id }}{
         --g-cta-text:#fff;
@@ -46,37 +80,11 @@
         height: 50px;
         margin-top: 20px;
     }
-    @media (min-width:1200px) {
-        .customstyle{{ section.id }} .collection-card-1-infor h4{
-        font-size: 22px;
-        }
-    }
   {% else %}
     .customstyle{{ section.id }} .collectionlist-item:hover h4{
         color: var(--g-main);
     }
   {% endif %}
-
-  /* Container Width Fix */
-  .customstyle{{ section.id }} .collectionlist-wrapper {
-      overflow: hidden; /* Prevents horizontal scrollbar */
-  }
-  
-  /* Slider Initialization Fix */
-  .collectionlist-slider:not(.slick-initialized) {
-    display: flex;
-    overflow-x: hidden;
-  }
-  .collectionlist-slider:not(.slick-initialized) .collectionlist-item {
-     flex: 0 0 auto; 
-     width: calc(100% / {{ section.settings.show }});
-  }
-  /* Mobile fallback pre-load */
-  @media (max-width: 767px) {
-      .collectionlist-slider:not(.slick-initialized) .collectionlist-item {
-          width: calc(100% / {{ section.settings.show_mobile }});
-      }
-  }
 
   {%- for block in section.blocks -%}
     {% if block.settings.bg_title != blank  %}
@@ -86,13 +94,15 @@
       .carousel__slide-wrapper--{{ block.id }} .collection-card-1-infor h4{
         display: block;
         position: relative;
-        width: 250px;
-        max-width: 100%;
+        /* FIXED WIDTH REMOVED/UPDATED TO RESPONSIVE */
+        width: 100%; 
+        max-width: 250px; /* Keeps desktop look but allows shrinking */
         height: 60px;
         display: inline-flex;
         justify-content: center;
         align-items: center;
         padding: 0 !important;
+        margin: 0 auto;
         background-size: cover;
         background:url({{ block.settings.bg_title  | image_url: width: 1920 }}) center center no-repeat ;
       }
@@ -107,9 +117,6 @@
       {%- render 'section-heading' -%}
       <div class="collectionlist-wrapper pt-0 pt-lg-0">
         
-        {% comment %} 
-            UPDATED: Removed 'row' class to prevent bootstrap conflict 
-        {% endcomment %}
         <div class="collectionlist-slider" id="collection-list-{{ section.id }}"
             data-rows="{{ section.settings.rows }}"
             data-slidesToShow="{{ section.settings.show }}"
@@ -122,10 +129,6 @@
             data-slidestoshow-mobile="{{ section.settings.show_mobile }}"
           >
           {%- for block in section.blocks -%}
-          
-          {% comment %} 
-            UPDATED: Removed 'col' class. Now Slick Slider handles the width 
-          {% endcomment %}
           <div class="collectionlist-item carousel__slide-wrapper--{{ block.id }}" {{ block.shopify_attributes }} >
             {%- assign featured_collection = collections[block.settings.collection] -%}
             {%- assign featured_image = block.settings.image -%}
@@ -143,7 +146,7 @@
 </div>
 
 {% comment %} 
-  JAVASCRIPT: Forces slider to respect mobile setting and reload correctly
+  JAVASCRIPT FIX: Strict Parsing and Re-init Logic
 {% endcomment %}
 {% if section.settings.enable_carousel %}
 <script>
@@ -153,16 +156,17 @@ document.addEventListener("DOMContentLoaded", function() {
         
         if ($slider.length === 0) return;
 
-        // Settings variables
-        var rows = $slider.data('rows');
-        var desktopShow = $slider.data('slidestoshow');
-        var mobileShow = $slider.data('slidestoshow-mobile'); // Using the new mobile setting
+        // Settings variables with strict Parsing
+        var rows = parseInt($slider.data('rows')) || 1;
+        var desktopShow = parseInt($slider.data('slidestoshow')) || 3;
+        var mobileShow = parseInt($slider.data('slidestoshow-mobile')) || 2; // Default to 2 if missing
+        
         var arrows = $slider.data('arrows');
         var dots = $slider.data('dots');
         var infinite = $slider.data('infinite');
         var draggable = $slider.data('draggable');
 
-        // Check if slick is already initialized to avoid conflict
+        // Check if slick is already initialized
         if ($slider.hasClass('slick-initialized')) {
             $slider.slick('unslick');
         }
@@ -171,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function() {
         $slider.slick({
             rows: rows,
             slidesToShow: desktopShow,
-            slidesToScroll: desktopShow,
+            slidesToScroll: 1,
             arrows: arrows,
             dots: dots,
             infinite: infinite,
@@ -185,11 +189,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 },
                 {
-                    breakpoint: 767, /* Mobile Breakpoint */
+                    breakpoint: 768, /* Changed to 768 to catch tablets/large phones */
                     settings: {
-                        slidesToShow: mobileShow, /* This will now enforce 2 items */
+                        slidesToShow: mobileShow,
                         slidesToScroll: 1,
-                        rows: 1 /* Force 1 row logic on mobile to prevent stacking */
+                        rows: 1
                     }
                 }
             ]
@@ -201,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (typeof $ !== 'undefined') {
             initCollectionSlick{{ section.id | replace: '-', '' }}();
         }
-    }, 100);
+    }, 200);
 
     // Re-initialize on Theme Editor update
     if (Shopify.designMode) {
@@ -335,7 +339,7 @@ document.addEventListener("DOMContentLoaded", function() {
       "max": 3,
       "step": 1,
       "label": "Display items (Mobile)",
-      "default": 1
+      "default": 2
     },
     {
       "type": "range",
