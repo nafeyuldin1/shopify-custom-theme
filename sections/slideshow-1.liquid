@@ -84,10 +84,11 @@
     height: 100vh !important;
   }
   
-  /* --- FIX START: Full Image without Crop on Mobile --- */
+  /* --- FIX START: CRITICAL CSS FOR FULL IMAGE --- */
   .mobile--slideshow-adapt {
     height: auto !important;
-    min-height: auto !important;
+    min-height: 100px; /* Prevent collapse */
+    padding-bottom: 0 !important;
   }
   .mobile--slideshow-adapt .slick-list,
   .mobile--slideshow-adapt .slick-track {
@@ -97,12 +98,17 @@
     height: auto !important;
     display: block;
   }
-  .mobile--slideshow-adapt .img_mobile {
-    height: 100%;
+  /* Ensure the image takes full width and natural height */
+  .mobile--slideshow-adapt .img_mobile_adapt img {
+    width: 100%;
+    height: auto !important;
+    display: block;
+    object-fit: contain; 
   }
-  .mobile--slideshow-adapt .img_mobile img{
-    height: 100%;
-    object-fit: cover;
+  /* Remove absolute positioning for adapt mode so container grows */
+  .mobile--slideshow-adapt .slideshow__image {
+     position: relative !important;
+     height: auto !important;
   }
   /* --- FIX END --- */
 }
@@ -751,28 +757,33 @@ html:not(.no-js) .slideshow.slick-initialized .slideshow__slide{
               <img src="{{ block.settings.image2 | image_url: width: 1920 }}" width="auto" height="auto" loading="lazy" alt="">
             </div>
           {% endif %}
+          
+          {% comment %} --- FIX START: MOBILE IMAGE LOGIC --- {% endcomment %}
           {% if block.settings.image_mobile != blank %}
           {%- assign image_mb = block.settings.image_mobile -%}
-
-            {% comment %} --- FIX START: Logic to show full uncropped image if Adapt is selected --- {% endcomment %}
+          
             {%- if section.settings.slideshow_height_mobile == 'adapt' -%}
-                <img class="d-lg-none w-100 lazyload"
+                {% comment %} Render simple image tag for adapt mode so it forces container height {% endcomment %}
+                <div class="img_mobile_adapt d-lg-none">
+                <img class="lazyload"
                     data-src="{{ image_mb | image_url: width: 750 }}"
                     src="{{ image_mb | image_url: width: 10 }}"
                     width="{{ image_mb.width }}"
                     height="{{ image_mb.height }}"
                     alt="{{ image_mb.alt }}"
-                    style="object-fit: contain; width: 100%; height: auto; display: block;">
-                {%- if section.settings.show_overlay -%}<div class="slideshow__overlay {% if section.settings.gradient_overlay %} gradient_overlay {% endif %}"></div>{%- endif -%}
-                
-            {%- elsif section.settings.slideshow_mobile -%}
+                    style="display:block;">
+                </div>
+                 {%- if section.settings.show_overlay -%}<div class="slideshow__overlay {% if section.settings.gradient_overlay %} gradient_overlay {% endif %}"></div>{%- endif -%}
             
+            {%- elsif section.settings.slideshow_mobile -%}
+            {% comment %} Original logic for fixed height modes {% endcomment %}
             <div class="img_mobile d-lg-none slideshow__image box ratio-container lazyload js{%- unless forloop.first -%} lazypreload{%- endunless -%}"
                   data-bgset="{%- render 'bgset', image: block.settings.image_mobile -%}"
                   data-sizes="auto"
                   data-parent-fit="cover">
                   {%- if section.settings.show_overlay -%}<div class="slideshow__overlay {% if section.settings.gradient_overlay %} gradient_overlay {% endif %}"></div>{%- endif -%}
             </div>
+            
             {%- else -%}
             <div class="img_mobile d-lg-none image-content__image-wrapper position-relative" style="padding-top:{{ 1 | divided_by: image_mb.aspect_ratio | times: 100 }}%;" >
               {%- assign img_mburl = image_mb | image_url: width: 1 | replace: 'width=1', 'width={width}' -%}
@@ -786,9 +797,9 @@ html:not(.no-js) .slideshow.slick-initialized .slideshow__slide{
                   height="{{ img_mburl.height }}">
             </div>
             {%- endif -%}
-            {% comment %} --- FIX END --- {% endcomment %}
-
           {% endif %}
+          {% comment %} --- FIX END --- {% endcomment %}
+
           {%- endif -%}
           {%- if section.settings.show_overlay -%}<div class="slideshow__overlay {% if section.settings.gradient_overlay %} gradient_overlay {% endif %}"></div>{%- endif -%}
 
@@ -933,12 +944,12 @@ html:not(.no-js) .slideshow.slick-initialized .slideshow__slide{
                         background-color:{{ block.settings.bg_button_hover_2 }};
                       }
                       .btn-underline.slideshow__btn-2{{ block.id }}{
-                        color:{{ block.settings.color_button_2 }} ;
-                        border-bottom-color:  {{ block.settings.bg_button_2 }} ;
+                        color:{{ block.settings.color_button_2 }} !important;
+                        border-bottom-color:  {{ block.settings.bg_button_2 }} !important;
                       }
                       .btn-underline.slideshow__btn-2{{ block.id }}:hover{
-                        color:{{ block.settings.color_button_hover_2 }} ;
-                        border-bottom-color:  {{ block.settings.bg_button_hover_2 }} ;
+                        color:{{ block.settings.color_button_hover_2 }} !important;
+                        border-bottom-color:  {{ block.settings.bg_button_hover_2 }} !important;
                       }
                     </style>
                     <div>
