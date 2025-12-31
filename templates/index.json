@@ -35,7 +35,6 @@
       ],
       "custom_css": [
         ".collection-card-1-infor {display: none;}",
-        "@media screen and (max-width: 750px) {.collectionlist-slider {display: grid; gap: 20px; }}",
         ".collection-card__image {border-radius: 3%; overflow: hidden;}",
         "h3 {font-size: 30px;}"
       ],

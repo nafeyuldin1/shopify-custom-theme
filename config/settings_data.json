@@ -2269,7 +2269,7 @@
           "logo_max_width": 115,
           "enable_transparent": false,
           "hover_transparent": true,
-          "enable_white": true,
+          "enable_white": false,
           "setwidth": "full",
           "layout_header": "logo-left-navigation-center",
           "type_sticky": "sticky-top",
