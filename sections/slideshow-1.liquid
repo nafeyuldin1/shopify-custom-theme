@@ -2,19 +2,6 @@
 {%- liquid 
   assign rotate = section.settings.autorotate
   assign dot = section.settings.slide_dot
-  
-  # --- FIX START: Calculate Mobile Aspect Ratio ---
-  assign mobile_height = section.settings.slideshow_height_mobile
-  assign mobile_aspect_ratio = 1.77
-  if mobile_height == 'adapt'
-    assign first_block = section.blocks[0]
-    if first_block.settings.image_mobile != blank
-      assign mobile_aspect_ratio = first_block.settings.image_mobile.aspect_ratio
-    elsif first_block.settings.image != blank
-      assign mobile_aspect_ratio = first_block.settings.image.aspect_ratio
-    endif
-  endif
-  # --- FIX END ---
 -%} 
 <style>
 .slideshow .slick-dots li button::before{
@@ -97,34 +84,27 @@
     height: 100vh !important;
   }
   
-  /* --- FIX START: New CSS Class for Adapt Height on Mobile --- */
+  /* --- FIX START: Full Image without Crop on Mobile --- */
   .mobile--slideshow-adapt {
     height: auto !important;
-    /* Uses Padding Hack based on Aspect Ratio */
-    padding-bottom: {{ 100 | divided_by: mobile_aspect_ratio }}% !important; 
-    position: relative;
+    min-height: auto !important;
   }
-  .mobile--slideshow-adapt .slick-list, 
-  .mobile--slideshow-adapt .slick-track,
+  .mobile--slideshow-adapt .slick-list,
+  .mobile--slideshow-adapt .slick-track {
+    height: auto !important;
+  }
   .mobile--slideshow-adapt .slideshow__slide {
-    height: 100% !important;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    height: auto !important;
+    display: block;
   }
   .mobile--slideshow-adapt .img_mobile {
-     height: 100% !important;
-  }
-  /* --- FIX END --- */
-
-  .img_mobile{
     height: 100%;
   }
-  .img_mobile img{
+  .mobile--slideshow-adapt .img_mobile img{
     height: 100%;
     object-fit: cover;
   }
+  /* --- FIX END --- */
 }
 
 
@@ -773,7 +753,20 @@ html:not(.no-js) .slideshow.slick-initialized .slideshow__slide{
           {% endif %}
           {% if block.settings.image_mobile != blank %}
           {%- assign image_mb = block.settings.image_mobile -%}
-            {%- if section.settings.slideshow_mobile -%}
+
+            {% comment %} --- FIX START: Logic to show full uncropped image if Adapt is selected --- {% endcomment %}
+            {%- if section.settings.slideshow_height_mobile == 'adapt' -%}
+                <img class="d-lg-none w-100 lazyload"
+                    data-src="{{ image_mb | image_url: width: 750 }}"
+                    src="{{ image_mb | image_url: width: 10 }}"
+                    width="{{ image_mb.width }}"
+                    height="{{ image_mb.height }}"
+                    alt="{{ image_mb.alt }}"
+                    style="object-fit: contain; width: 100%; height: auto; display: block;">
+                {%- if section.settings.show_overlay -%}<div class="slideshow__overlay {% if section.settings.gradient_overlay %} gradient_overlay {% endif %}"></div>{%- endif -%}
+                
+            {%- elsif section.settings.slideshow_mobile -%}
+            
             <div class="img_mobile d-lg-none slideshow__image box ratio-container lazyload js{%- unless forloop.first -%} lazypreload{%- endunless -%}"
                   data-bgset="{%- render 'bgset', image: block.settings.image_mobile -%}"
                   data-sizes="auto"
@@ -793,6 +786,8 @@ html:not(.no-js) .slideshow.slick-initialized .slideshow__slide{
                   height="{{ img_mburl.height }}">
             </div>
             {%- endif -%}
+            {% comment %} --- FIX END --- {% endcomment %}
+
           {% endif %}
           {%- endif -%}
           {%- if section.settings.show_overlay -%}<div class="slideshow__overlay {% if section.settings.gradient_overlay %} gradient_overlay {% endif %}"></div>{%- endif -%}
