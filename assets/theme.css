@@ -12052,3 +12052,6 @@ blockquote::before {
 .product-single .my-gallery {
   margin-bottom: 0px;
 }
+.collection-count{
+  display: none;
+}
