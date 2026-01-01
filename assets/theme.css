@@ -12058,3 +12058,6 @@ blockquote::before {
 .collection-card-1-infor h4{
   font-weight: normal !important;
 }
+.collection-card-1-infor h4{
+   padding-top: 0px !important;
+}
