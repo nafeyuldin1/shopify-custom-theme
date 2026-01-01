@@ -12055,7 +12055,7 @@ blockquote::before {
 .collection-count{
   display: none;
 }
-.collection-card-1-infor h4{
+.collection-card-1-infor h4 a{
   font-weight: normal !important;
 }
 .collection-card-1-infor h4{
