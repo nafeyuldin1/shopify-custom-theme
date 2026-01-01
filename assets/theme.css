@@ -12055,3 +12055,6 @@ blockquote::before {
 .collection-count{
   display: none;
 }
+.collection-card-1-infor h4{
+  font-weight: normal !important;
+}
