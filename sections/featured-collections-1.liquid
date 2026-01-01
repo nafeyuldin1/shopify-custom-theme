@@ -9,27 +9,67 @@
     display: block;
   }
   
-  /* Text Overlay Styling */
-  .customstyle{{ section.id }} .collection-card-1-infor{
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    padding: 0 10px;
-  }
+  /* --- DYNAMIC TITLE POSITION LOGIC --- */
   
-  /* Heading Style */
+  /* Common Text Styling */
+  .customstyle{{ section.id }} .collection-card-1-infor {
+    width: 100%;
+    text-align: {{ section.settings.align-heading }};
+    padding: 10px;
+    transition: all 0.3s ease;
+    z-index: 2;
+  }
+
   .customstyle{{ section.id }} .collection-card-1-infor h4 {
-    color: #fff;
     font-weight: bold;
-    font-size: 24px; /* Default size */
+    font-size: 24px;
     margin: 0;
     line-height: 1.2;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
   }
+
+  /* CASE 1: OVERLAY (Original Style - Center) */
+  {% if section.settings.title_position == 'overlay' %}
+    .customstyle{{ section.id }} .collection-card-1-infor {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .customstyle{{ section.id }} .collection-card-1-infor h4 {
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+  
+  /* CASE 2: ABOVE IMAGE */
+  {% elsif section.settings.title_position == 'above' %}
+    /* Force Flex column to reorder items */
+    .customstyle{{ section.id }} .collectionlist-item > a, 
+    .customstyle{{ section.id }} .collectionlist-item > div {
+       display: flex;
+       flex-direction: column;
+    }
+    .customstyle{{ section.id }} .collection-card-1-infor {
+      order: -1; /* Move text to top */
+      position: relative;
+      margin-bottom: 5px;
+    }
+    .customstyle{{ section.id }} .collection-card-1-infor h4 {
+      color: {{ section.settings.text_color_outside }}; /* Dynamic Color */
+      text-shadow: none;
+    }
+
+  /* CASE 3: BELOW IMAGE */
+  {% elsif section.settings.title_position == 'below' %}
+    .customstyle{{ section.id }} .collection-card-1-infor {
+      position: relative;
+      margin-top: 5px;
+    }
+    .customstyle{{ section.id }} .collection-card-1-infor h4 {
+      color: {{ section.settings.text_color_outside }}; /* Dynamic Color */
+      text-shadow: none;
+    }
+  {% endif %}
+  /* ------------------------------------- */
 
   /* --- DESKTOP LAYOUT --- */
   .customstyle{{ section.id }} .collectionlist-slider {
@@ -224,6 +264,32 @@ document.addEventListener("DOMContentLoaded", function() {
       "id": "bgsection",
       "label": "Background Section",
       "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Title Position Settings"
+    },
+    {
+      "type": "select",
+      "id": "title_position",
+      "label": "Title Position",
+      "default": "overlay",
+      "options": [
+        { "value": "overlay", "label": "Overlay (Center of Image)" },
+        { "value": "above", "label": "Above Image (Upar)" },
+        { "value": "below", "label": "Below Image (Neeche)" }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "text_color_outside",
+      "label": "Text Color (If Above/Below)",
+      "default": "#000000",
+      "info": "Used when title is not overlaying the image"
+    },
+    {
+      "type": "header",
+      "content": "Content Settings"
     },
     {
       "type": "image_picker",
