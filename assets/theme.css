@@ -12066,4 +12066,7 @@ blockquote::before {
   .drawer__nav-link {
     color: black !important;
   }
+  .disclosure__button {
+  color: black !important;
+}
 }
