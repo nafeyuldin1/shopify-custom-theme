@@ -12069,4 +12069,7 @@ blockquote::before {
   .disclosure__button {
   color: black !important;
 }
+.drawer__nav-item:last-child{
+  display: flex;
+}
 }
