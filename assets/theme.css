@@ -12079,3 +12079,6 @@ blockquote::before {
 .product-card__info{
   text-align: start;
 }
+.drawer__nav-toggle--open{
+  display: block; color: black;
+}
