@@ -239,7 +239,7 @@
           "type": "image_item",
           "settings": {
             "image": "shopify://shop_images/Group_1_copy_12.webp",
-            "link": "",
+            "link": "shopify://collections/men-size-40-7",
             "image_radius": 0,
             "title_text": "EU 40",
             "title_fontsize": 16,
