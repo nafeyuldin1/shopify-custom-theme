@@ -47,7 +47,7 @@
             "show_overlay": false,
             "gradient_overlay": false,
             "bg_overlay": "#000000",
-            "opacity_overlay": 0.4,
+            "opacity_overlay": 0,
             "slide_toptitle": "",
             "slide_toptitle_color": "#999999",
             "slide_title": "",
