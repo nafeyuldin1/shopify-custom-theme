@@ -12061,3 +12061,9 @@ blockquote::before {
 .collection-card-1-infor h4{
    padding-top: 0px !important;
 }
+@media screen and (max-width: 750px) {
+ 
+  .drawer__nav-link {
+    color: black !important;
+  }
+}
