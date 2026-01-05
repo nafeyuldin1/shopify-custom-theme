@@ -12072,4 +12072,10 @@ blockquote::before {
 .drawer__nav-item:last-child{
   display: flex;
 }
+.product-card__info{
+  padding: 10px 0px;
+}
+}
+.product-card__info{
+  text-align: start;
 }
