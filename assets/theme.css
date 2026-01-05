@@ -12080,5 +12080,10 @@ blockquote::before {
   text-align: start;
 }
 .drawer__nav-toggle--open{
-  display: block; color: black;
+  display: block; 
+  color: black;
+}
+.drawer__nav-toggle--open .icon-plus{
+  color: black;
+  fill: black;
 }
