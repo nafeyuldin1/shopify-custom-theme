@@ -23,6 +23,26 @@
       {%- endif -%}
 {% endcapture %}
 
+{%- comment -%} 
+  ----------------------------------------------------------------
+  NEW VARIANT INFO LOGIC (Size & Condition)
+  This captures the first 2 options of the selected variant
+  ----------------------------------------------------------------
+{%- endcomment -%}
+{% capture variant_info %}
+  {%- unless product.has_only_default_variant -%}
+    <div class="product-card__variant-info mb-2" style="font-size: 13px; line-height: 1.4; color: #6c757d;">
+      {%- assign current_variant = product.selected_or_first_available_variant -%}
+      {%- for option in product.options limit: 2 -%}
+        <div class="variant-row">
+          <span style="font-weight: 700; color: #333;">{{ option }}:</span> 
+          <span>{{ current_variant.options[forloop.index0] }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endunless -%}
+{% endcapture %}
+
 {%- comment -%} price {%- endcomment -%}
 {% capture price %}
   <div class="product-card__price mb-1 {% if product.compare_at_price > product.price %} product-card__pricesale {% endif %}">
@@ -122,6 +142,7 @@
       {{ vendor }}
       <a href="{{ product.url | within: collection }}" title="{{ product.title }}" class="mb-1 d-block product-card__name {% if settings.t_product %} text-uppercase {% endif %}">{{ product.title }}</a>
       {{ review }}
+      {{ variant_info }} {% comment %} ADDED HERE {% endcomment %}
       {{ price }}
     </div>
   </div>
@@ -143,6 +164,7 @@
   </div>
   <div class="product-card__info">
     {%- render 'swatch-grid-1', product: product -%}
+    {{ variant_info }} {% comment %} ADDED HERE {% endcomment %}
     {{ price }}
     <a href="{{ product.url | within: collection }}" title="{{ product.title }}" class="d-block mb-1 product-card__name {% if settings.t_product %} text-uppercase {% endif %}">{{ product.title }}</a>
     {{ vendor }}
@@ -210,6 +232,7 @@
     {{ vendor }}
     <a href="{{ product.url | within: collection }}" title="{{ product.title }}" class="d-block product-card__name {% if settings.t_product %} text-uppercase {% endif %}">{{ product.title }}</a>
     {{ review }}
+    {{ variant_info }} {% comment %} ADDED HERE {% endcomment %}
     {{ price }}
     {%- render 'swatch-grid-1', product : product -%}
     <div class="product-card__overlay d-flex justify-content-center flex-row">
@@ -314,6 +337,7 @@
     {{ vendor }}
     <a href="{{ product.url | within: collection }}" title="{{ product.title }}" class="d-block product-card__name {% if settings.t_product %} text-uppercase {% endif %}">{{ product.title }}</a>
     {{ review }}
+    {{ variant_info }} {% comment %} ADDED HERE {% endcomment %}
     {{ price }}
     {%- render 'swatch-grid-1', product: product -%}
   </div>
@@ -362,6 +386,7 @@
     {{ vendor }}
     <a href="{{ product.url | within: collection }}" title="{{ product.title }}" class="d-block product-card__name {% if settings.t_product %} text-uppercase {% endif %}">{{ product.title }}</a>
     {{ review }}
+    {{ variant_info }} {% comment %} ADDED HERE {% endcomment %}
     {{ price }}
     {%- render 'swatch-grid-1' , product : product -%}
   </div>
@@ -372,8 +397,7 @@
 
 
   {%- when 'product-6' -%} 
-  <!-- product-grid-6.liquid -->
-<div class="product-card js-product-card product-card--style1 product-card--style6" data-price="{{ product.price }}">
+  <div class="product-card js-product-card product-card--style1 product-card--style6" data-price="{{ product.price }}">
   <div class="product-card__image-wr overflow-hidden">
     {{ image_product }}
     <div class="product-card__overlay d-flex justify-content-center flex-row">
@@ -422,6 +446,7 @@
     {{ vendor }}
     <a href="{{ product.url | within: collection }}" title="{{ product.title }}" class="d-block product-card__name {% if settings.t_product %} text-uppercase {% endif %}">{{ product.title }}</a>
     {{ review }}
+    {{ variant_info }} {% comment %} ADDED HERE {% endcomment %}
     {{ price }}
     {%- render 'swatch-grid-1', product: product -%}
   </div>
@@ -490,6 +515,7 @@
       {{ vendor }}
       <a href="{{ product.url | within: collection }}" title="{{ product.title }}" class="product-card__name d-block {% if settings.t_product %} text-uppercase {% endif %}">{{ product.title }}</a>
       {{ review }}
+      {{ variant_info }} {% comment %} ADDED HERE {% endcomment %}
       {{ price }}
     </div>
   </div>
@@ -516,6 +542,7 @@
       {{ vendor }}
       <a href="{{ product.url | within: collection }}" title="{{ product.title }}" class="d-block product-card__name {% if settings.t_product %} text-uppercase {% endif %}">{{ product.title }}</a>
       {{ review }}
+      {{ variant_info }} {% comment %} ADDED HERE {% endcomment %}
       {{ price }}
       {%- render 'swatch-grid-1', product : product -%}
       <div class="product-card__overlay d-flex justify-content-center flex-row">
@@ -630,6 +657,7 @@
         {{ vendor }}
         <a href="{{ product.url | within: collection }}" title="{{ product.title }}" class=" d-block product-card__name {% if settings.t_product %} text-uppercase {% endif %}">{{ product.title }}</a>
         {{ review }}
+        {{ variant_info }} {% comment %} ADDED HERE {% endcomment %}
         {{ price }}
         {% render 'swatch-grid-1', product: product %}
       </div>
@@ -688,6 +716,7 @@
           {{ review }}
           {% render 'swatch-grid-1', product: product %}
           <div class="product-card-cart mt-2 position-relative">
+            {{ variant_info }} {% comment %} ADDED HERE {% endcomment %}
             {{ price }}
             <span  class="fz-n2 text-uppercase js-grid-cart  {% unless product.available %} disabled {% endunless %}" 
               {% if product.available %}
@@ -708,8 +737,5 @@
           </div>
         </div>
       </div>
-
-
-
 
 {%- endcase -%}
