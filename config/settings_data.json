@@ -70,7 +70,7 @@
     "font_weight_sub": "400",
     "base_size_sup": 12,
     "letter_spacing_sub": 0.2,
-    "main_linklist": "quick-links",
+    "main_linklist": "quick-links-copy",
     "login_enable": false,
     "lang_enable": false,
     "currency_enable": false,
