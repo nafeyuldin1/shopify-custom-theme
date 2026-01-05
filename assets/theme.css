@@ -12070,7 +12070,7 @@ blockquote::before {
   color: black !important;
 }
 .drawer__nav-item:last-child{
-  display: flex;
+  display: none;
 }
 .product-card__info{
   padding: 10px 0px;
