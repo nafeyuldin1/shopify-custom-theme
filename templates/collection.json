@@ -40,10 +40,10 @@
         "image_zhL4JB": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Whisk_e23c2be92d12cd19430445e4fd5df4a5eg_1.png",
+            "image": "shopify://shop_images/Untitled_Project.jpg",
             "alignment": "center center",
             "text_alignment": "center center",
-            "bgwrap": "#F8EDE7",
+            "bgwrap": "#f8ede7",
             "show_overlay": false,
             "gradient_overlay": false,
             "bg_overlay": "#000000",
@@ -59,14 +59,14 @@
             "stylebtns": "btn-theme",
             "bg_button": "#000000",
             "color_button": "#ffffff",
-            "bg_button_hover": "#FF6F2E",
+            "bg_button_hover": "#ff6f2e",
             "color_button_hover": "#ffffff",
             "button_label_2": "",
             "button_link_2": "",
             "stylebtns_2": "btn-theme",
             "bg_button_2": "#000000",
             "color_button_2": "#ffffff",
-            "bg_button_hover_2": "#FF6F2E",
+            "bg_button_hover_2": "#ff6f2e",
             "color_button_hover_2": "#ffffff"
           }
         }
@@ -88,13 +88,13 @@
         "autorotate_speed": 3,
         "anim_slideshow": "fade",
         "e_arrow": false,
-        "color_arrow": "#000",
-        "bg_arrow": "#fff",
+        "color_arrow": "#000000",
+        "bg_arrow": "#ffffff",
         "opacity_arrow": 0,
         "e_dot": false,
         "slide_dot": "square",
-        "color_dot_nav": "#000",
-        "color_dot_active": "#C99A5C"
+        "color_dot_nav": "#000000",
+        "color_dot_active": "#c99a5c"
       }
     },
     "product-grid": {
@@ -103,7 +103,7 @@
         "collection_width": "container",
         "products_per_page": 12,
         "collection_perrow": "3",
-        "type_pagination": "pagi",
+        "type_pagination": "scroll",
         "enable_viewcolumn": true,
         "enable_filtering": true,
         "enable_sorting": true,
