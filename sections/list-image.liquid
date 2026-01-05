@@ -9,6 +9,16 @@
         display: flex;
         overflow: hidden;
     }
+    /* Link Styles */
+    .list-image-link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        transition: opacity 0.3s ease;
+    }
+    .list-image-link:hover {
+        opacity: 0.9;
+    }
 </style>
 
 <div class="customstyle{{ section.id }}" data-aos={{section.settings.animation}}>
@@ -41,6 +51,7 @@
                             position:absolute;
                             top:{{ block.settings.top }}%;
                             left:{{ block.settings.left }}%;
+                            z-index: 2; /* Ensure pin is above the link */
                         }
 
                         /* Image Radius */
@@ -62,11 +73,22 @@
                         }
                     </style>
                     <div class="items-content position-relative">
+                        
+                        {% comment %} === LINK LOGIC START (For Image) === {% endcomment %}
+                        {% if block.settings.link != blank %}
+                            <a href="{{ block.settings.link }}" class="list-image-link">
+                        {% endif %}
+
                         {% if block.settings.image != blank %}
                             <img src="{{ block.settings.image | image_url: width: 1920 }}" width="auto" height="auto" loading="lazy" alt="{{ block.settings.image.alt }}">
                         {%- else -%}
                             {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
                         {% endif %}
+
+                        {% if block.settings.link != blank %}
+                            </a>
+                        {% endif %}
+                        {% comment %} === LINK LOGIC END === {% endcomment %}
                         
                         {% if block.settings.product != blank %}
                         <div class="product-hover-product d-none d-lg-block">
@@ -87,7 +109,14 @@
                     
                     {% if block.settings.title_text != blank %}
                         <div class="list-image-title">
-                            {{ block.settings.title_text }}
+                            {% comment %} === LINK LOGIC START (For Title) === {% endcomment %}
+                            {% if block.settings.link != blank %}
+                                <a href="{{ block.settings.link }}" style="text-decoration: none; color: inherit;">
+                                    {{ block.settings.title_text }}
+                                </a>
+                            {% else %}
+                                {{ block.settings.title_text }}
+                            {% endif %}
                         </div>
                     {% endif %}
 
@@ -336,6 +365,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     "type": "image_picker",
                     "id": "image",
                     "label": "Image"
+                },
+                {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Link"
                 },
                 {
                     "type": "range",
