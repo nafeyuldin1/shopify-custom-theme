@@ -2296,7 +2296,7 @@
           "menu_label_hot": "#5369e3",
           "menu_label_sale": "#34bf49",
           "menu_label_other": "#222222",
-          "link_list_search": "",
+          "link_list_search": "main-menu",
           "sidebar_search": true,
           "e_hd_currency": false,
           "enable_image": false,
