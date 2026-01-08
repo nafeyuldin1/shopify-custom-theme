@@ -298,6 +298,20 @@
             "left": 60
           }
         },
+        "image_item_fB9kFn": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify://shop_images/44_size.webp",
+            "link": "shopify://collections/men-size-44-9",
+            "image_radius": 0,
+            "title_text": "EU 44",
+            "title_fontsize": 16,
+            "title_color": "#000000",
+            "product": "",
+            "top": 30,
+            "left": 60
+          }
+        },
         "image_item_qxeEdJ": {
           "type": "image_item",
           "settings": {
@@ -334,6 +348,7 @@
         "image_item_bcVw9p",
         "image_item_rzcn79",
         "image_item_fJncMk",
+        "image_item_fB9kFn",
         "image_item_qxeEdJ",
         "image_item_kgCDJD"
       ],
