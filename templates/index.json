@@ -418,6 +418,20 @@
             "top": 30,
             "left": 60
           }
+        },
+        "image_item_YjxnWq": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_1_copy_13_938ae7eb-0eab-4204-ba24-3c3ede4e61cc.webp",
+            "link": "shopify://collections/women-size-42-9",
+            "image_radius": 0,
+            "title_text": "EU 42",
+            "title_fontsize": 16,
+            "title_color": "#000000",
+            "product": "",
+            "top": 30,
+            "left": 60
+          }
         }
       },
       "block_order": [
@@ -426,7 +440,8 @@
         "image_item_3nT67F",
         "image_item_DfmBW9",
         "image_item_rb3VRK",
-        "image_item_rAbUgb"
+        "image_item_rAbUgb",
+        "image_item_YjxnWq"
       ],
       "custom_css": [
         "h3 {font-size: 30px;}"
