@@ -297,6 +297,34 @@
             "top": 30,
             "left": 60
           }
+        },
+        "image_item_qxeEdJ": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_1_copy_16_1.webp",
+            "link": "shopify://collections/men-size-45-10",
+            "image_radius": 0,
+            "title_text": "EU 45",
+            "title_fontsize": 16,
+            "title_color": "#000000",
+            "product": "",
+            "top": 30,
+            "left": 60
+          }
+        },
+        "image_item_kgCDJD": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_1_copy_17.webp",
+            "link": "shopify://collections/men-size-46-11",
+            "image_radius": 0,
+            "title_text": "EU 46",
+            "title_fontsize": 16,
+            "title_color": "#000000",
+            "product": "",
+            "top": 30,
+            "left": 60
+          }
         }
       },
       "block_order": [
@@ -305,7 +333,9 @@
         "image_item_erybtw",
         "image_item_bcVw9p",
         "image_item_rzcn79",
-        "image_item_fJncMk"
+        "image_item_fJncMk",
+        "image_item_qxeEdJ",
+        "image_item_kgCDJD"
       ],
       "custom_css": [
         "h3 {font-size: 30px;}"
