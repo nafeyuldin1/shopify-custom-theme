@@ -601,11 +601,11 @@
       "slideshow-1": {
         "type": "slideshow-1",
         "blocks": {
-          "57fbd2ee-62ca-482f-a017-4a435f4fdb87": {
+          "image_VJcwRY": {
             "type": "image",
             "settings": {
-              "image": "shopify://shop_images/BANNER_1.png",
-              "image_mobile": "shopify://shop_images/BANNER_1_mobile_view.png",
+              "image": "shopify://shop_images/banner_2_1.png",
+              "image_mobile": "shopify://shop_images/banner_2_mobile.jpg",
               "alignment": "center center",
               "text_alignment": "left center",
               "bgwrap": "#f8ede7",
@@ -635,11 +635,11 @@
               "color_button_hover_2": "#ffffff"
             }
           },
-          "image_VJcwRY": {
+          "57fbd2ee-62ca-482f-a017-4a435f4fdb87": {
             "type": "image",
             "settings": {
-              "image": "shopify://shop_images/banner_2_1.png",
-              "image_mobile": "shopify://shop_images/banner_2_mobile.jpg",
+              "image": "shopify://shop_images/BANNER_1.png",
+              "image_mobile": "shopify://shop_images/BANNER_1_mobile_view.png",
               "alignment": "center center",
               "text_alignment": "left center",
               "bgwrap": "#f8ede7",
@@ -705,8 +705,8 @@
           }
         },
         "block_order": [
-          "57fbd2ee-62ca-482f-a017-4a435f4fdb87",
           "image_VJcwRY",
+          "57fbd2ee-62ca-482f-a017-4a435f4fdb87",
           "image_9QnCNb"
         ],
         "custom_css": [],
